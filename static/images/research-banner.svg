@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="640" viewBox="0 0 1600 640" role="img" aria-labelledby="title desc">
+  <title id="title">Research network banner</title>
+  <desc id="desc">An abstract academic modelling banner with map contours, network lines, and chart marks.</desc>
+  <rect width="1600" height="640" fill="#f6efe2"/>
+  <path d="M0 110 C230 40 360 170 560 94 C780 10 980 74 1190 42 C1370 14 1490 46 1600 20 L1600 0 L0 0 Z" fill="#e4d3b4"/>
+  <path d="M0 640 L0 478 C180 432 320 486 482 430 C680 362 850 446 1042 394 C1250 338 1420 380 1600 318 L1600 640 Z" fill="#d8e5df"/>
+  <g fill="none" stroke="#c6b389" stroke-width="2" opacity="0.75">
+    <path d="M870 122 C990 80 1110 98 1215 150 C1315 200 1430 188 1544 136"/>
+    <path d="M805 250 C934 212 1068 224 1188 278 C1310 334 1436 320 1580 252"/>
+    <path d="M742 384 C902 336 1062 354 1214 424 C1348 486 1470 462 1600 406"/>
+  </g>
+  <g stroke="#741d29" stroke-width="4" opacity="0.74">
+    <line x1="972" y1="184" x2="1112" y2="138"/>
+    <line x1="1112" y1="138" x2="1268" y2="210"/>
+    <line x1="1268" y1="210" x2="1398" y2="168"/>
+    <line x1="1112" y1="138" x2="1198" y2="324"/>
+    <line x1="1198" y1="324" x2="1376" y2="356"/>
+    <line x1="972" y1="184" x2="1040" y2="384"/>
+    <line x1="1040" y1="384" x2="1198" y2="324"/>
+  </g>
+  <g fill="#ffffff" stroke="#741d29" stroke-width="5">
+    <circle cx="972" cy="184" r="18"/>
+    <circle cx="1112" cy="138" r="22"/>
+    <circle cx="1268" cy="210" r="18"/>
+    <circle cx="1398" cy="168" r="16"/>
+    <circle cx="1198" cy="324" r="23"/>
+    <circle cx="1376" cy="356" r="17"/>
+    <circle cx="1040" cy="384" r="18"/>
+  </g>
+  <g fill="#2d6f73" opacity="0.88">
+    <rect x="1230" y="458" width="34" height="88" rx="3"/>
+    <rect x="1280" y="414" width="34" height="132" rx="3"/>
+    <rect x="1330" y="438" width="34" height="108" rx="3"/>
+    <rect x="1380" y="382" width="34" height="164" rx="3"/>
+    <rect x="1430" y="426" width="34" height="120" rx="3"/>
+  </g>
+  <g fill="none" stroke="#b78a2a" stroke-width="5" opacity="0.8">
+    <path d="M890 500 C960 460 1018 472 1074 420 C1140 360 1194 384 1242 330"/>
+    <path d="M884 536 L1485 536"/>
+  </g>
+  <g fill="#ffffff" opacity="0.54">
+    <circle cx="1524" cy="92" r="74"/>
+    <circle cx="866" cy="86" r="42"/>
+    <circle cx="1512" cy="520" r="52"/>
+  </g>
+</svg>

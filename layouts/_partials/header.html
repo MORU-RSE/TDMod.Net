@@ -1,0 +1,34 @@
+<header class="header">
+  <div class="td-brandbar">
+    <div class="td-header-inner">
+      {{- $label_text := (site.Params.label.text | default site.Title) }}
+      <a class="td-site-title" href="{{ "" | absLangURL }}" accesskey="h" title="{{ $label_text }} (Alt + H)">
+        {{- $label_text -}}
+      </a>
+      {{- with site.Params.brand.tagline }}
+      <span class="td-site-tagline">{{ . }}</span>
+      {{- end }}
+    </div>
+  </div>
+
+  <nav class="td-nav" aria-label="Main navigation">
+    <div class="td-header-inner td-header-inner--nav">
+      {{- $currentPage := . }}
+      <ul id="menu" class="menu">
+        {{- range site.Menus.main }}
+        {{- $menu_item_url := (cond (strings.HasSuffix .URL "/") .URL (printf "%s/" .URL) ) | absLangURL }}
+        {{- $page_url:= $currentPage.Permalink | absLangURL }}
+        {{- $is_search := eq (site.GetPage .KeyName).Layout `search` }}
+        <li>
+          <a href="{{ .URL | absLangURL }}" title="{{ .Title | default .Name }}{{- cond $is_search (" (Alt + /)" | safeHTMLAttr) ("" | safeHTMLAttr ) }}"
+            {{- cond $is_search (" accesskey=/" | safeHTMLAttr) ("" | safeHTMLAttr ) }}>
+            <span {{- if eq $menu_item_url $page_url }} class="active" {{- end }}>
+              {{- .Name -}}
+            </span>
+          </a>
+        </li>
+        {{- end }}
+      </ul>
+    </div>
+  </nav>
+</header>

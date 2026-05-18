@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">News cover placeholder</title>
+  <desc id="desc">A simple placeholder cover image for a news post.</desc>
+  <rect width="1200" height="675" fill="#16b99f"/>
+  <rect x="70" y="70" width="1060" height="535" fill="none" stroke="#ffffff" stroke-width="4" opacity="0.7"/>
+  <circle cx="940" cy="205" r="82" fill="#ffffff" opacity="0.2"/>
+  <circle cx="1015" cy="285" r="42" fill="#ffffff" opacity="0.26"/>
+  <path d="M110 495 C260 420 380 438 520 365 C675 284 815 314 1030 235" fill="none" stroke="#ffffff" stroke-width="10" opacity="0.45"/>
+  <text x="110" y="250" fill="#ffffff" font-family="Helvetica, Arial, sans-serif" font-size="56" font-weight="700">News Cover Image</text>
+  <text x="110" y="322" fill="#ffffff" font-family="Helvetica, Arial, sans-serif" font-size="30" opacity="0.88">Replace this file with your real image</text>
+</svg>

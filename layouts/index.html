@@ -1,0 +1,107 @@
+{{- define "main" }}
+{{- $hero := site.Params.home.hero -}}
+{{- $dateFormat := site.Params.DateFormat | default "January 2, 2006" -}}
+
+<section class="td-hero" aria-labelledby="td-home-title">
+  <div class="td-hero__content">
+    {{- with $hero.eyebrow }}
+    <p class="td-eyebrow">{{ . }}</p>
+    {{- end }}
+    <h1 id="td-home-title">{{ $hero.title | default site.Title }}</h1>
+    {{- with $hero.subtitle }}
+    <p class="td-hero__subtitle">{{ . }}</p>
+    {{- end }}
+    <div class="td-actions" aria-label="Primary links">
+      {{- with $hero.primaryText }}
+      <a class="td-button td-button--primary" href="{{ $hero.primaryURL | default "/news/" | relURL }}">{{ . }}</a>
+      {{- end }}
+      {{- with $hero.secondaryText }}
+      <a class="td-button td-button--secondary" href="{{ $hero.secondaryURL | default "/collaboration/" | relURL }}">{{ . }}</a>
+      {{- end }}
+    </div>
+  </div>
+  <div class="td-hero__visual" aria-hidden="true"></div>
+</section>
+
+<section class="td-intro md-content" aria-label="Group overview">
+  {{- with .Content }}
+  <div class="td-intro__copy">
+    {{ . }}
+  </div>
+  {{- end }}
+</section>
+
+<div class="td-layout">
+  <section class="td-feed" aria-labelledby="td-latest-title">
+    <div class="td-section__header">
+      <h2 id="td-latest-title">Latest Updates</h2>
+      <a href="{{ "/archives/" | relURL }}">Archive</a>
+    </div>
+
+    {{- $sections := site.Params.mainSections | default (slice "news") -}}
+    {{- $recent := where site.RegularPages "Type" "in" $sections -}}
+    {{- if $recent }}
+    <div class="td-feed__items">
+      {{- range first 6 (sort $recent "Date" "desc") }}
+      {{- $label := .Type | humanize | title -}}
+      {{- with site.GetPage "section" .Type }}{{ $label = .Title }}{{ end -}}
+      <article class="td-news-card">
+        {{- partial "td-card-cover.html" . -}}
+        <div class="td-card-meta">
+          <span>{{ $label }}</span>
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format $dateFormat }}</time>
+          {{- with (partial "author.html" .) }}
+          <span class="td-card-author">Written by {{ . }}</span>
+          {{- end }}
+        </div>
+        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        <p>{{ .Summary | plainify | htmlUnescape }}</p>
+      </article>
+      {{- end }}
+    </div>
+    {{- else }}
+    <p class="td-empty">No posts have been published yet.</p>
+    {{- end }}
+  </section>
+
+  <aside class="td-sidebar" aria-label="Sidebar">
+    {{- with site.Params.home.quickLinks }}
+    <section class="td-panel">
+      <h2>Quick Links</h2>
+      <ul class="td-link-list">
+        {{- range . }}
+        <li>
+          <a href="{{ .url | relURL }}">{{ .title }}</a>
+          <p>{{ .text }}</p>
+        </li>
+        {{- end }}
+      </ul>
+    </section>
+    {{- end }}
+
+    {{- $publications := where site.RegularPages "Type" "publications" -}}
+    {{- if $publications }}
+    <section class="td-panel td-panel--accent">
+      <h2>Recent Publications</h2>
+      <ul class="td-compact-list">
+        {{- range first 3 (sort $publications "Date" "desc") }}
+        <li>
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format $dateFormat }}</time>
+        </li>
+        {{- end }}
+      </ul>
+    </section>
+    {{- end }}
+
+    <section class="td-panel">
+      <h2>Feeds</h2>
+      <ul class="td-link-list td-link-list--simple">
+        <li><a href="{{ "/index.xml" | relURL }}">RSS feed</a></li>
+        <li><a href="{{ "/tags/" | relURL }}">Tags</a></li>
+        <li><a href="{{ "/categories/" | relURL }}">Categories</a></li>
+      </ul>
+    </section>
+  </aside>
+</div>
+{{- end }}

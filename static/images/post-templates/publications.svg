@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Publications template cover</title>
+  <desc id="desc">Default cover template for publications posts.</desc>
+  <rect width="1200" height="675" fill="#f4f4f2"/>
+  <rect x="142" y="92" width="360" height="492" fill="#ffffff" stroke="#deddda" stroke-width="4"/>
+  <rect x="548" y="92" width="510" height="492" fill="#ffffff" stroke="#deddda" stroke-width="4"/>
+  <rect x="190" y="158" width="264" height="20" fill="#303943"/>
+  <rect x="190" y="210" width="230" height="14" fill="#aab2b6"/>
+  <rect x="190" y="242" width="260" height="14" fill="#aab2b6"/>
+  <rect x="190" y="274" width="210" height="14" fill="#aab2b6"/>
+  <path d="M606 438 L705 320 L805 378 L930 230" fill="none" stroke="#16b99f" stroke-width="10"/>
+  <circle cx="705" cy="320" r="16" fill="#16b99f"/>
+  <circle cx="930" cy="230" r="16" fill="#16b99f"/>
+  <text x="602" y="178" fill="#303943" font-family="Helvetica, Arial, sans-serif" font-size="60" font-weight="700">Publications</text>
+  <text x="606" y="236" fill="#74777b" font-family="Helvetica, Arial, sans-serif" font-size="26">Paper, preprint, report, or brief</text>
+</svg>

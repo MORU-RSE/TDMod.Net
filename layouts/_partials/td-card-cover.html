@@ -1,0 +1,32 @@
+{{- $page := . -}}
+{{- $isHidden := ($page.Param "cover.hiddenInList") | default ($page.Param "cover.hidden") | default false -}}
+{{- if not $isHidden -}}
+  {{- $src := "" -}}
+  {{- $alt := "" -}}
+  {{- with $page.Params.cover.image -}}
+    {{- $coverImage := . -}}
+    {{- $cover := ($page.Resources.ByType "image").GetMatch (printf "*%s*" $coverImage) -}}
+    {{- if $cover -}}
+      {{- $src = $cover.RelPermalink -}}
+    {{- else if (or (hasPrefix $coverImage "http://") (hasPrefix $coverImage "https://")) -}}
+      {{- $src = $coverImage -}}
+    {{- else -}}
+      {{- $src = $coverImage | relURL -}}
+    {{- end -}}
+    {{- $alt = $page.Params.cover.alt | default $page.Title -}}
+  {{- else -}}
+  {{- if site.Params.defaultCover.enabled -}}
+    {{- $images := site.Params.defaultCover.images -}}
+    {{- $fallback := (index $images $page.Type) | default (index $images "default") | default "/images/post-templates/default.svg" -}}
+    {{- $src = $fallback | relURL -}}
+    {{- $sectionTitle := $page.Type | humanize | title -}}
+    {{- with site.GetPage "section" $page.Type }}{{ $sectionTitle = .Title }}{{ end -}}
+    {{- $alt = printf "%s template cover" $sectionTitle -}}
+  {{- end -}}
+  {{- end -}}
+  {{- if $src -}}
+  <a class="td-card-cover" href="{{ $page.RelPermalink }}" aria-label="Open {{ $page.Title | plainify }}">
+    <img src="{{ $src }}" alt="{{ $alt }}" loading="lazy">
+  </a>
+  {{- end -}}
+{{- end -}}

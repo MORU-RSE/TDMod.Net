@@ -1,4 +1,163 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
+baseURL = "https://tdmod.net/"
+languageCode = "en-us"
 title = "TDMod.Net"
 theme = "PaperMod"
+enableRobotsTXT = true
+
+[pagination]
+pagerSize = 6
+
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+series = "series"
+
+[params]
+description = "A research and modelling group website for news, activities, models, publications, job opportunities, and collaboration."
+keywords = ["modelling", "research", "public health", "epidemiology", "publications", "collaboration"]
+defaultTheme = "light"
+disableThemeToggle = true
+disableSpecial1stPost = true
+ShowBreadCrumbs = true
+ShowCodeCopyButtons = true
+ShowPostNavLinks = true
+ShowReadingTime = true
+ShowRssButtonInSectionTermList = true
+ShowShareButtons = false
+ShowToc = true
+TocOpen = false
+DateFormat = "2 January 2006"
+mainSections = ["news", "models", "publications", "jobs", "collaboration"]
+
+[params.label]
+text = "TDMod.Net"
+
+[params.brand]
+tagline = "Tropical Diseases Modelling Network"
+
+[params.assets]
+theme_color = "#741d29"
+msapplication_TileColor = "#741d29"
+
+[params.defaultCover]
+enabled = true
+showInSingle = true
+
+[params.defaultCover.images]
+news = "/images/post-templates/news.svg"
+models = "/images/post-templates/models.svg"
+publications = "/images/post-templates/publications.svg"
+jobs = "/images/post-templates/jobs.svg"
+collaboration = "/images/post-templates/collaboration.svg"
+default = "/images/post-templates/default.svg"
+
+[params.home.hero]
+eyebrow = "Research and modelling network"
+title = "TDMod.Net"
+subtitle = "Providing a simple forum for sharing, discussing, and documenting modelling research, activities, publications, opportunities, and collaboration."
+primaryText = "Latest News"
+primaryURL = "/news/"
+secondaryText = "Collaborate"
+secondaryURL = "/collaboration/"
+
+[[params.home.metrics]]
+value = "Open"
+label = "research outputs"
+
+[[params.home.metrics]]
+value = "Active"
+label = "models and projects"
+
+[[params.home.metrics]]
+value = "Global"
+label = "collaboration network"
+
+[[params.home.focusAreas]]
+title = "Mathematical Modelling"
+text = "Transmission models, statistical workflows, and decision-support tools for public health research."
+url = "/models/"
+
+[[params.home.focusAreas]]
+title = "Research Updates"
+text = "News, field activities, meetings, training, workshops, and group announcements."
+url = "/news/"
+
+[[params.home.focusAreas]]
+title = "Publications"
+text = "Peer-reviewed papers, preprints, technical reports, policy briefs, and reproducible outputs."
+url = "/publications/"
+
+[[params.home.quickLinks]]
+title = "Browse the Archive"
+text = "See all posts by date across news, models, publications, jobs, and collaboration updates."
+url = "/archives/"
+
+[[params.home.quickLinks]]
+title = "Search the Site"
+text = "Find people, models, activities, publications, and opportunities across the website."
+url = "/search/"
+
+[[params.home.quickLinks]]
+title = "Work With Us"
+text = "Explore collaboration routes, project ideas, and ways to connect with the research group."
+url = "/collaboration/"
+
+[params.fuseOpts]
+isCaseSensitive = false
+shouldSort = true
+location = 0
+distance = 1000
+threshold = 0.4
+minMatchCharLength = 2
+keys = ["title", "permalink", "summary", "content"]
+
+[[menu.main]]
+identifier = "home"
+name = "Home"
+url = "/"
+weight = 10
+
+[[menu.main]]
+identifier = "about"
+name = "About us"
+url = "/about/"
+weight = 20
+
+[[menu.main]]
+identifier = "news"
+name = "News / Activities"
+url = "/news/"
+weight = 30
+
+[[menu.main]]
+identifier = "models"
+name = "Models / Projects"
+url = "/models/"
+weight = 40
+
+[[menu.main]]
+identifier = "publications"
+name = "Publications"
+url = "/publications/"
+weight = 50
+
+[[menu.main]]
+identifier = "jobs"
+name = "Jobs"
+url = "/jobs/"
+weight = 60
+
+[[menu.main]]
+identifier = "collaboration"
+name = "Collaboration"
+url = "/collaboration/"
+weight = 70
+
+[[menu.main]]
+identifier = "search"
+name = "Search"
+url = "/search/"
+weight = 80

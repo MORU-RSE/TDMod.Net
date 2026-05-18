@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">News template cover</title>
+  <desc id="desc">Default cover template for news and activities posts.</desc>
+  <rect width="1200" height="675" fill="#16b99f"/>
+  <path d="M0 520 C190 455 335 510 505 430 C685 346 828 376 1010 265 C1096 212 1158 196 1200 190 L1200 675 L0 675 Z" fill="#0f8e7d" opacity="0.55"/>
+  <circle cx="958" cy="170" r="88" fill="#ffffff" opacity="0.14"/>
+  <circle cx="1034" cy="260" r="44" fill="#ffffff" opacity="0.2"/>
+  <rect x="82" y="82" width="1036" height="511" fill="none" stroke="#ffffff" stroke-width="4" opacity="0.58"/>
+  <text x="108" y="292" fill="#ffffff" font-family="Helvetica, Arial, sans-serif" font-size="66" font-weight="700">News / Activities</text>
+  <text x="112" y="355" fill="#ffffff" font-family="Helvetica, Arial, sans-serif" font-size="28" opacity="0.86">TDMod.Net update</text>
+</svg>

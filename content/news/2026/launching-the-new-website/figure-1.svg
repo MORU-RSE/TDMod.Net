@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560" viewBox="0 0 1000 560" role="img" aria-labelledby="title desc">
+  <title id="title">Inline figure placeholder</title>
+  <desc id="desc">A simple placeholder inline image for article content.</desc>
+  <rect width="1000" height="560" fill="#f4f4f2"/>
+  <rect x="55" y="55" width="890" height="450" fill="#ffffff" stroke="#deddda" stroke-width="3"/>
+  <rect x="115" y="340" width="92" height="95" fill="#16b99f"/>
+  <rect x="242" y="290" width="92" height="145" fill="#0f8e7d"/>
+  <rect x="369" y="230" width="92" height="205" fill="#303943"/>
+  <rect x="496" y="260" width="92" height="175" fill="#8d9498"/>
+  <path d="M120 250 C240 175 340 210 452 150 C590 74 700 118 835 92" fill="none" stroke="#16b99f" stroke-width="8"/>
+  <text x="115" y="150" fill="#343a40" font-family="Helvetica, Arial, sans-serif" font-size="42" font-weight="700">Inline Image Example</text>
+  <text x="115" y="202" fill="#74777b" font-family="Helvetica, Arial, sans-serif" font-size="24">Use Markdown: ![Alt text](filename.jpg)</text>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Collaboration template cover</title>
+  <desc id="desc">Default cover template for collaboration content.</desc>
+  <rect width="1200" height="675" fill="#eef3f2"/>
+  <g stroke="#16b99f" stroke-width="8" opacity="0.78">
+    <line x1="315" y1="250" x2="600" y2="165"/>
+    <line x1="600" y1="165" x2="880" y2="275"/>
+    <line x1="315" y1="250" x2="500" y2="455"/>
+    <line x1="500" y1="455" x2="880" y2="275"/>
+    <line x1="600" y1="165" x2="500" y2="455"/>
+  </g>
+  <g fill="#303943">
+    <circle cx="315" cy="250" r="42"/>
+    <circle cx="600" cy="165" r="42"/>
+    <circle cx="880" cy="275" r="42"/>
+    <circle cx="500" cy="455" r="42"/>
+  </g>
+  <text x="115" y="568" fill="#303943" font-family="Helvetica, Arial, sans-serif" font-size="64" font-weight="700">Collaboration</text>
+  <text x="118" y="615" fill="#74777b" font-family="Helvetica, Arial, sans-serif" font-size="27">Partner link or shared project</text>
+</svg>

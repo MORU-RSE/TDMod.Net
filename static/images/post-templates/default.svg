@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Default post template cover</title>
+  <desc id="desc">Default cover template for posts without a specific image.</desc>
+  <rect width="1200" height="675" fill="#efeeec"/>
+  <rect x="90" y="90" width="1020" height="495" fill="#ffffff" stroke="#deddda" stroke-width="4"/>
+  <path d="M165 450 C300 350 430 395 560 280 C720 140 860 240 1030 165" fill="none" stroke="#16b99f" stroke-width="10"/>
+  <text x="150" y="285" fill="#303943" font-family="Helvetica, Arial, sans-serif" font-size="66" font-weight="700">TDMod.Net</text>
+  <text x="154" y="350" fill="#74777b" font-family="Helvetica, Arial, sans-serif" font-size="28">Post cover template</text>
+</svg>

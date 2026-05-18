@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Jobs template cover</title>
+  <desc id="desc">Default cover template for job opportunity posts.</desc>
+  <rect width="1200" height="675" fill="#26313a"/>
+  <rect x="125" y="126" width="950" height="423" rx="8" fill="#ffffff" opacity="0.08"/>
+  <rect x="205" y="220" width="790" height="56" fill="#ffffff" opacity="0.16"/>
+  <rect x="205" y="316" width="610" height="24" fill="#16b99f"/>
+  <rect x="205" y="370" width="470" height="24" fill="#ffffff" opacity="0.28"/>
+  <rect x="205" y="424" width="540" height="24" fill="#ffffff" opacity="0.28"/>
+  <text x="205" y="192" fill="#ffffff" font-family="Helvetica, Arial, sans-serif" font-size="62" font-weight="700">Job Opportunity</text>
+  <text x="205" y="508" fill="#c4c9cc" font-family="Helvetica, Arial, sans-serif" font-size="28">Open role, fellowship, consultancy, or student project</text>
+</svg>

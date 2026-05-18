@@ -1,0 +1,3 @@
+# Local development URL used by `hugo server`.
+# Production builds still use the root `hugo.toml` baseURL.
+baseURL = "http://localhost:1313/"
