@@ -47,21 +47,21 @@ enabled = true
 showInSingle = true
 
 [params.defaultCover.images]
-news = "/images/post-templates/news.svg"
-models = "/images/post-templates/models.svg"
-publications = "/images/post-templates/publications.svg"
-jobs = "/images/post-templates/jobs.svg"
-collaboration = "/images/post-templates/collaboration.svg"
-default = "/images/post-templates/default.svg"
+news = "images/post-templates/news.svg"
+models = "images/post-templates/models.svg"
+publications = "images/post-templates/publications.svg"
+jobs = "images/post-templates/jobs.svg"
+collaboration = "images/post-templates/collaboration.svg"
+default = "images/post-templates/default.svg"
 
 [params.home.hero]
 eyebrow = "Research and modelling network"
 title = "TDMod.Net"
 subtitle = "Providing a simple forum for sharing, discussing, and documenting modelling research, activities, publications, opportunities, and collaboration."
 primaryText = "Latest News"
-primaryURL = "/news/"
+primaryURL = "news/"
 secondaryText = "Collaborate"
-secondaryURL = "/collaboration/"
+secondaryURL = "collaboration/"
 
 [[params.home.metrics]]
 value = "Open"
@@ -78,32 +78,32 @@ label = "collaboration network"
 [[params.home.focusAreas]]
 title = "Mathematical Modelling"
 text = "Transmission models, statistical workflows, and decision-support tools for public health research."
-url = "/models/"
+url = "models/"
 
 [[params.home.focusAreas]]
 title = "Research Updates"
 text = "News, field activities, meetings, training, workshops, and group announcements."
-url = "/news/"
+url = "news/"
 
 [[params.home.focusAreas]]
 title = "Publications"
 text = "Peer-reviewed papers, preprints, technical reports, policy briefs, and reproducible outputs."
-url = "/publications/"
+url = "publications/"
 
 [[params.home.quickLinks]]
 title = "Browse the Archive"
 text = "See all posts by date across news, models, publications, jobs, and collaboration updates."
-url = "/archives/"
+url = "archives/"
 
 [[params.home.quickLinks]]
 title = "Search the Site"
 text = "Find people, models, activities, publications, and opportunities across the website."
-url = "/search/"
+url = "search/"
 
 [[params.home.quickLinks]]
 title = "Work With Us"
 text = "Explore collaboration routes, project ideas, and ways to connect with the research group."
-url = "/collaboration/"
+url = "collaboration/"
 
 [params.fuseOpts]
 isCaseSensitive = false
@@ -123,41 +123,41 @@ weight = 10
 [[menu.main]]
 identifier = "about"
 name = "About us"
-url = "/about/"
+url = "about/"
 weight = 20
 
 [[menu.main]]
 identifier = "news"
 name = "News / Activities"
-url = "/news/"
+url = "news/"
 weight = 30
 
 [[menu.main]]
 identifier = "models"
 name = "Models / Projects"
-url = "/models/"
+url = "models/"
 weight = 40
 
 [[menu.main]]
 identifier = "publications"
 name = "Publications"
-url = "/publications/"
+url = "publications/"
 weight = 50
 
 [[menu.main]]
 identifier = "jobs"
 name = "Jobs"
-url = "/jobs/"
+url = "jobs/"
 weight = 60
 
 [[menu.main]]
 identifier = "collaboration"
 name = "Collaboration"
-url = "/collaboration/"
+url = "collaboration/"
 weight = 70
 
 [[menu.main]]
 identifier = "search"
 name = "Search"
-url = "/search/"
+url = "search/"
 weight = 80

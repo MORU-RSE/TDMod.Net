@@ -13,10 +13,10 @@
     {{- end }}
     <div class="td-actions" aria-label="Primary links">
       {{- with $hero.primaryText }}
-      <a class="td-button td-button--primary" href="{{ $hero.primaryURL | default "/news/" | relURL }}">{{ . }}</a>
+      <a class="td-button td-button--primary" href="{{ $hero.primaryURL | default "news/" | relURL }}">{{ . }}</a>
       {{- end }}
       {{- with $hero.secondaryText }}
-      <a class="td-button td-button--secondary" href="{{ $hero.secondaryURL | default "/collaboration/" | relURL }}">{{ . }}</a>
+      <a class="td-button td-button--secondary" href="{{ $hero.secondaryURL | default "collaboration/" | relURL }}">{{ . }}</a>
       {{- end }}
     </div>
   </div>
@@ -35,7 +35,7 @@
   <section class="td-feed" aria-labelledby="td-latest-title">
     <div class="td-section__header">
       <h2 id="td-latest-title">Latest Updates</h2>
-      <a href="{{ "/archives/" | relURL }}">Archive</a>
+      <a href="{{ "archives/" | relURL }}">Archive</a>
     </div>
 
     {{- $sections := site.Params.mainSections | default (slice "news") -}}
@@ -97,9 +97,9 @@
     <section class="td-panel">
       <h2>Feeds</h2>
       <ul class="td-link-list td-link-list--simple">
-        <li><a href="{{ "/index.xml" | relURL }}">RSS feed</a></li>
-        <li><a href="{{ "/tags/" | relURL }}">Tags</a></li>
-        <li><a href="{{ "/categories/" | relURL }}">Categories</a></li>
+        <li><a href="{{ "index.xml" | relURL }}">RSS feed</a></li>
+        <li><a href="{{ "tags/" | relURL }}">Tags</a></li>
+        <li><a href="{{ "categories/" | relURL }}">Categories</a></li>
       </ul>
     </section>
   </aside>

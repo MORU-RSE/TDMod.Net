@@ -17,7 +17,7 @@
   {{- else -}}
   {{- if site.Params.defaultCover.enabled -}}
     {{- $images := site.Params.defaultCover.images -}}
-    {{- $fallback := (index $images $page.Type) | default (index $images "default") | default "/images/post-templates/default.svg" -}}
+    {{- $fallback := (index $images $page.Type) | default (index $images "default") | default "images/post-templates/default.svg" -}}
     {{- $src = $fallback | relURL -}}
     {{- $sectionTitle := $page.Type | humanize | title -}}
     {{- with site.GetPage "section" $page.Type }}{{ $sectionTitle = .Title }}{{ end -}}

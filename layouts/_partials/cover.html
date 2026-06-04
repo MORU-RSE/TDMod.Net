@@ -2,7 +2,7 @@
 {{- $showFallback := and site.Params.defaultCover.enabled (or (not $.IsSingle) (site.Params.defaultCover.showInSingle | default true)) -}}
 {{- if and (not .Params.cover.image) $showFallback (not $.isHidden) -}}
     {{- $images := site.Params.defaultCover.images -}}
-    {{- $fallback := (index $images .Type) | default (index $images "default") | default "/images/post-templates/default.svg" -}}
+    {{- $fallback := (index $images .Type) | default (index $images "default") | default "images/post-templates/default.svg" -}}
     {{- $sectionTitle := .Type | humanize | title -}}
     {{- with site.GetPage "section" .Type }}{{ $sectionTitle = .Title }}{{ end -}}
     <figure class="entry-cover td-default-cover">
