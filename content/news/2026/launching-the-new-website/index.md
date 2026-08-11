@@ -1,4 +1,5 @@
 ---
+entry_type: post
 title: "Launching the New Research Website"
 date: 2026-05-18
 author: "TDMod.Net Team"

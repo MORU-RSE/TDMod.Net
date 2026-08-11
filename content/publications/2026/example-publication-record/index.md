@@ -1,4 +1,5 @@
 ---
+entry_type: post
 title: "Example Publication Record"
 date: 2026-05-12
 author: ["First Author", "Second Author"]

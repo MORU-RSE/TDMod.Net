@@ -40,6 +40,7 @@ collections:
     extension: md
     format: yaml-frontmatter
     preview_path: news/{{year}}/{{slug}}/
+    filter: { field: entry_type, value: post }
     summary: "{{title}} - {{date}}"
     sortable_fields: ["date", "title", "author"]
     view_groups:
@@ -47,8 +48,10 @@ collections:
         field: date
         pattern: \d{4}
     fields:
+      - { label: Entry Type, name: entry_type, widget: hidden, default: post }
       - { label: Title, name: title, widget: string }
       - { label: Publish Date, name: date, widget: datetime, date_format: YYYY-MM-DD, time_format: false, format: YYYY-MM-DD }
+      - { label: Draft, name: draft, widget: boolean, default: true, hint: Leave this on while you are writing. Turn it off to publish to the live site. }
       - { label: Author, name: author, widget: string, required: false }
       - { label: Summary, name: summary, widget: text, required: true, hint: Short text shown on listing pages. }
       - label: Categories
@@ -90,6 +93,7 @@ collections:
     extension: md
     format: yaml-frontmatter
     preview_path: models/{{year}}/{{slug}}/
+    filter: { field: entry_type, value: post }
     summary: "{{title}} - {{date}}"
     sortable_fields: ["date", "title", "author"]
     view_groups:
@@ -97,8 +101,10 @@ collections:
         field: date
         pattern: \d{4}
     fields:
+      - { label: Entry Type, name: entry_type, widget: hidden, default: post }
       - { label: Title, name: title, widget: string }
       - { label: Publish Date, name: date, widget: datetime, date_format: YYYY-MM-DD, time_format: false, format: YYYY-MM-DD }
+      - { label: Draft, name: draft, widget: boolean, default: true, hint: Leave this on while you are writing. Turn it off to publish to the live site. }
       - { label: Author, name: author, widget: string, required: false }
       - { label: Summary, name: summary, widget: text, required: true }
       - label: Categories
@@ -140,6 +146,7 @@ collections:
     extension: md
     format: yaml-frontmatter
     preview_path: publications/{{year}}/{{slug}}/
+    filter: { field: entry_type, value: post }
     summary: "{{title}} - {{date}}"
     sortable_fields: ["date", "title", "author"]
     view_groups:
@@ -147,8 +154,10 @@ collections:
         field: date
         pattern: \d{4}
     fields:
+      - { label: Entry Type, name: entry_type, widget: hidden, default: post }
       - { label: Title, name: title, widget: string }
       - { label: Publish Date, name: date, widget: datetime, date_format: YYYY-MM-DD, time_format: false, format: YYYY-MM-DD }
+      - { label: Draft, name: draft, widget: boolean, default: true, hint: Leave this on while you are writing. Turn it off to publish to the live site. }
       - { label: Authors, name: author, widget: list, required: false, field: { label: Author, name: author, widget: string } }
       - { label: Summary, name: summary, widget: text, required: true }
       - label: Categories
@@ -190,6 +199,7 @@ collections:
     extension: md
     format: yaml-frontmatter
     preview_path: jobs/{{year}}/{{slug}}/
+    filter: { field: entry_type, value: post }
     summary: "{{title}} - {{date}}"
     sortable_fields: ["date", "title", "author"]
     view_groups:
@@ -197,8 +207,10 @@ collections:
         field: date
         pattern: \d{4}
     fields:
+      - { label: Entry Type, name: entry_type, widget: hidden, default: post }
       - { label: Title, name: title, widget: string }
       - { label: Publish Date, name: date, widget: datetime, date_format: YYYY-MM-DD, time_format: false, format: YYYY-MM-DD }
+      - { label: Draft, name: draft, widget: boolean, default: true, hint: Leave this on while you are writing. Turn it off to publish to the live site. }
       - { label: Author, name: author, widget: string, required: false }
       - { label: Summary, name: summary, widget: text, required: true }
       - label: Categories
@@ -230,6 +242,8 @@ collections:
   - name: pages
     label: Site Pages
     description: Stable pages and section introductions.
+    media_folder: ""
+    public_folder: ""
     files:
       - label: Home Page
         name: home
@@ -243,6 +257,7 @@ collections:
       - label: About Us
         name: about
         file: content/about/_index.md
+        preview_path: about/
         extension: md
         format: yaml-frontmatter
         fields:
@@ -252,6 +267,7 @@ collections:
       - label: Collaboration
         name: collaboration
         file: content/collaboration/_index.md
+        preview_path: collaboration/
         extension: md
         format: yaml-frontmatter
         fields:
@@ -261,6 +277,7 @@ collections:
       - label: News Section Intro
         name: news_intro
         file: content/news/_index.md
+        preview_path: news/
         extension: md
         format: yaml-frontmatter
         fields:
@@ -270,6 +287,7 @@ collections:
       - label: Models Section Intro
         name: models_intro
         file: content/models/_index.md
+        preview_path: models/
         extension: md
         format: yaml-frontmatter
         fields:
@@ -279,6 +297,7 @@ collections:
       - label: Publications Section Intro
         name: publications_intro
         file: content/publications/_index.md
+        preview_path: publications/
         extension: md
         format: yaml-frontmatter
         fields:
@@ -288,6 +307,7 @@ collections:
       - label: Jobs Section Intro
         name: jobs_intro
         file: content/jobs/_index.md
+        preview_path: jobs/
         extension: md
         format: yaml-frontmatter
         fields:

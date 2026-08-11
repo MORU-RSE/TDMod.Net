@@ -1,4 +1,5 @@
 ---
+entry_type: post
 title: "Expression of Interest"
 date: 2026-05-08
 author: "TDMod.Net Team"

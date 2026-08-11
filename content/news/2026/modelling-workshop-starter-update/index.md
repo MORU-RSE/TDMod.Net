@@ -1,4 +1,5 @@
 ---
+entry_type: post
 title: "Modelling Workshop Starter Update"
 date: 2026-05-10
 author: "Training Team"

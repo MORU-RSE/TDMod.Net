@@ -36,6 +36,112 @@
   <body>
     <div id="tdmod-image-status" role="status" aria-live="polite" hidden></div>
     <script src="image-optimizer.js"></script>
-    <script src="https://unpkg.com/decap-cms@3.15.1/dist/decap-cms.js"></script>
+    <script
+      src="https://unpkg.com/decap-cms@3.15.1/dist/decap-cms.js"
+      integrity="sha384-in6eHztHveqQ7uMZ1fDaKlDmacQLFuLH2wWrFTiymyuS8zQ5bixwL8U3AeRi8h/L"
+      crossorigin="anonymous"></script>
+    <script>
+      (function registerPreview(CMS) {
+        'use strict';
+
+        if (!CMS) {
+          return;
+        }
+
+        // The real site stylesheet, resolved relative to this page so one expression
+        // works both at http://localhost:1313/admin/ and at the deployed
+        // https://moru-rse.github.io/TDMod.Net/admin/. Requires
+        // [params.assets] disableFingerprinting = true in hugo.toml, which keeps the
+        // built bundle at the stable path assets/css/stylesheet.css.
+        CMS.registerPreviewStyle(
+          new URL('../assets/css/stylesheet.css', window.location.href).pathname,
+        );
+
+        // The preview iframe has no site chrome, so give the article a page-like frame.
+        // PaperMod's article typography lives on .post-header / .post-title /
+        // .post-content directly, so reproducing those class names is enough.
+        CMS.registerPreviewStyle(
+          [
+            'body { background: var(--theme); margin: 0; padding: 24px; }',
+            '.post-single {',
+            '  max-width: var(--main-width); margin: 0 auto; background: var(--entry);',
+            '  padding: 24px 28px; border: 1px solid var(--border); border-radius: var(--radius);',
+            '}',
+            '.entry-cover { margin: 0 0 var(--content-gap) 0; text-align: center; }',
+            '.entry-cover img { max-width: 100%; height: auto; border-radius: var(--radius); }',
+            '.entry-cover figcaption { color: var(--secondary); font-size: 14px; margin-top: 8px; }',
+            '.tdmod-draft-flag {',
+            '  display: inline-block; margin-bottom: 16px; padding: 4px 10px;',
+            '  border-radius: 999px; background: #9b1c1c; color: #fff;',
+            '  font: 600 12px/1.4 system-ui, sans-serif; letter-spacing: 0.04em;',
+            '}',
+          ].join('\n'),
+          { raw: true },
+        );
+
+        function joinAuthor(author) {
+          if (!author) {
+            return '';
+          }
+          // Publications use a list widget; the other collections use a plain string.
+          return typeof author.join === 'function' ? author.join(', ') : String(author);
+        }
+
+        function coverSource(component, name) {
+          if (!name) {
+            return null;
+          }
+          try {
+            var asset = component.props.getAsset(name);
+            return asset ? String(asset) : null;
+          } catch (error) {
+            // A saved entry stores a bare filename (see layouts/_partials/cover.html),
+            // which the media store cannot always resolve. Not worth failing over.
+            return null;
+          }
+        }
+
+        var FeedPreview = createClass({
+          render: function render() {
+            var data = this.props.entry.get('data');
+            var meta = [data.get('date'), joinAuthor(data.get('author'))]
+              .filter(Boolean)
+              .join(' · ');
+            var cover = coverSource(this, data.getIn(['cover', 'image']));
+            var caption = data.getIn(['cover', 'caption']);
+
+            return h(
+              'article',
+              { className: 'post-single' },
+              data.get('draft')
+                ? h('div', { className: 'tdmod-draft-flag' }, 'DRAFT — not on the live site')
+                : null,
+              h(
+                'header',
+                { className: 'post-header' },
+                h('h1', { className: 'post-title' }, data.get('title') || 'Untitled'),
+                meta ? h('div', { className: 'post-meta' }, meta) : null,
+                data.get('summary')
+                  ? h('div', { className: 'post-description' }, data.get('summary'))
+                  : null,
+              ),
+              cover
+                ? h(
+                    'figure',
+                    { className: 'entry-cover' },
+                    h('img', { src: cover, alt: data.getIn(['cover', 'alt']) || '' }),
+                    caption ? h('figcaption', null, caption) : null,
+                  )
+                : null,
+              h('div', { className: 'post-content' }, this.props.widgetFor('body')),
+            );
+          },
+        });
+
+        ['news', 'models', 'publications', 'jobs'].forEach(function register(name) {
+          CMS.registerPreviewTemplate(name, FeedPreview);
+        });
+      })(window.CMS);
+    </script>
   </body>
 </html>

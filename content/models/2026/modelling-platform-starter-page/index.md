@@ -1,4 +1,5 @@
 ---
+entry_type: post
 title: "Modelling Platform Starter Page"
 date: 2026-05-15
 author: "Modelling Team"

@@ -41,6 +41,9 @@ tagline = "Tropical Diseases Modelling Network"
 [params.assets]
 theme_color = "#741d29"
 msapplication_TileColor = "#741d29"
+# Keeps the built stylesheet at the stable path assets/css/stylesheet.css so the
+# Decap preview pane in static/admin/index.html can load the real site styles.
+disableFingerprinting = true
 
 [params.defaultCover]
 enabled = true
