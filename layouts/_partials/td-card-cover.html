@@ -3,10 +3,12 @@
 {{- if not $isHidden -}}
   {{- $src := "" -}}
   {{- $alt := "" -}}
+  {{- $resource := false -}}
   {{- with $page.Params.cover.image -}}
     {{- $coverImage := . -}}
     {{- $cover := ($page.Resources.ByType "image").GetMatch (printf "*%s*" $coverImage) -}}
     {{- if $cover -}}
+      {{- $resource = $cover -}}
       {{- $src = $cover.RelPermalink -}}
     {{- else if (or (hasPrefix $coverImage "http://") (hasPrefix $coverImage "https://")) -}}
       {{- $src = $coverImage -}}
@@ -26,7 +28,27 @@
   {{- end -}}
   {{- if $src -}}
   <a class="td-card-cover" href="{{ $page.RelPermalink }}" aria-label="Open {{ $page.Title | plainify }}">
-    <img src="{{ $src }}" alt="{{ $alt }}" loading="lazy">
+    {{- $processableFormats := slice "jpg" "jpeg" "png" "webp" -}}
+    {{- if and $resource (in $processableFormats $resource.MediaType.SubType) -}}
+      {{- $sizes := slice 360 480 720 -}}
+      <img
+        src="{{ $src }}"
+        srcset="
+          {{- range $size := $sizes -}}
+            {{- if ge $resource.Width $size -}}
+              {{- printf "%s %dw, " (($resource.Resize (printf "%dx" $size)).RelPermalink) $size -}}
+            {{- end -}}
+          {{- end -}}
+          {{- printf "%s %dw" $resource.RelPermalink $resource.Width -}}"
+        sizes="(min-width: 1100px) 340px, (min-width: 768px) 45vw, 100vw"
+        width="{{ $resource.Width }}"
+        height="{{ $resource.Height }}"
+        alt="{{ $alt }}"
+        loading="lazy"
+        decoding="async">
+    {{- else -}}
+      <img src="{{ $src }}" alt="{{ $alt }}" loading="lazy" decoding="async">
+    {{- end -}}
   </a>
   {{- end -}}
 {{- end -}}

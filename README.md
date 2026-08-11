@@ -30,3 +30,13 @@ content/
   publications/    Publications and research outputs
   jobs/            Opportunities and expressions of interest
   collaboration/   Collaboration information and partner links
+```
+
+## Content Management
+
+This site includes a Decap CMS admin interface at `/TDMod.Net/admin/` on
+GitHub Pages (`/admin/` in local development), so editors can manage content
+through a browser instead of editing Markdown files directly.
+
+See `CMS_GUIDE.md` for the current setup notes, GitHub authentication
+requirements, direct publishing behavior, and automatic image optimization.

@@ -1,0 +1,296 @@
+backend:
+  name: github
+  repo: MORU-RSE/TDMod.Net
+  branch: main
+  base_url: https://tdmod-net-oauth.moru-rse.workers.dev
+  auth_endpoint: /auth
+  use_graphql: true
+  commit_messages:
+    create: "Create {{collection}}: {{slug}}"
+    update: "Update {{collection}}: {{slug}}"
+    delete: "Delete {{collection}}: {{slug}}"
+    uploadMedia: "Upload media: {{path}}"
+    deleteMedia: "Delete media: {{path}}"
+
+local_backend: true
+publish_mode: simple
+
+site_url: https://moru-rse.github.io/TDMod.Net/
+display_url: https://moru-rse.github.io/TDMod.Net/
+
+media_folder: static/images/uploads
+public_folder: /TDMod.Net/images/uploads
+
+slug:
+  encoding: ascii
+  clean_accents: true
+  sanitize_replacement: "-"
+
+collections:
+  - name: news
+    label: News / Activities
+    label_singular: News / Activity
+    description: Group announcements, activities, workshops, seminars, and updates.
+    folder: content/news
+    path: "{{year}}/{{slug}}/index"
+    media_folder: ""
+    public_folder: ""
+    create: true
+    delete: true
+    extension: md
+    format: yaml-frontmatter
+    preview_path: news/{{year}}/{{slug}}/
+    summary: "{{title}} - {{date}}"
+    sortable_fields: ["date", "title", "author"]
+    view_groups:
+      - label: Year
+        field: date
+        pattern: \d{4}
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Publish Date, name: date, widget: datetime, date_format: YYYY-MM-DD, time_format: false, format: YYYY-MM-DD }
+      - { label: Author, name: author, widget: string, required: false }
+      - { label: Summary, name: summary, widget: text, required: true, hint: Short text shown on listing pages. }
+      - label: Categories
+        name: categories
+        widget: select
+        multiple: true
+        required: false
+        options: ["News", "Activities", "Events", "Training", "Announcements"]
+      - { label: Tags, name: tags, widget: list, required: false, field: { label: Tag, name: tag, widget: string } }
+      - label: Cover
+        name: cover
+        widget: object
+        required: false
+        collapsed: true
+        fields:
+          - label: Image
+            name: image
+            widget: image
+            required: false
+            choose_url: false
+            hint: Upload a JPEG, PNG, or WebP image. It will be resized and converted to WebP automatically (target 500 KB).
+            media_library:
+              config:
+                max_file_size: 1048576
+          - { label: Alt Text, name: alt, widget: string, required: false }
+          - { label: Caption, name: caption, widget: string, required: false }
+      - { label: Body, name: body, widget: markdown, required: false }
+
+  - name: models
+    label: Models / Projects
+    label_singular: Model / Project
+    description: Modelling projects, tools, workflows, dashboards, and software resources.
+    folder: content/models
+    path: "{{year}}/{{slug}}/index"
+    media_folder: ""
+    public_folder: ""
+    create: true
+    delete: true
+    extension: md
+    format: yaml-frontmatter
+    preview_path: models/{{year}}/{{slug}}/
+    summary: "{{title}} - {{date}}"
+    sortable_fields: ["date", "title", "author"]
+    view_groups:
+      - label: Year
+        field: date
+        pattern: \d{4}
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Publish Date, name: date, widget: datetime, date_format: YYYY-MM-DD, time_format: false, format: YYYY-MM-DD }
+      - { label: Author, name: author, widget: string, required: false }
+      - { label: Summary, name: summary, widget: text, required: true }
+      - label: Categories
+        name: categories
+        widget: select
+        multiple: true
+        required: false
+        options: ["Models", "Projects", "Software", "Workflows", "Dashboards"]
+      - { label: Tags, name: tags, widget: list, required: false, field: { label: Tag, name: tag, widget: string } }
+      - label: Cover
+        name: cover
+        widget: object
+        required: false
+        collapsed: true
+        fields:
+          - label: Image
+            name: image
+            widget: image
+            required: false
+            choose_url: false
+            hint: Upload a JPEG, PNG, or WebP image. It will be resized and converted to WebP automatically (target 500 KB).
+            media_library:
+              config:
+                max_file_size: 1048576
+          - { label: Alt Text, name: alt, widget: string, required: false }
+          - { label: Caption, name: caption, widget: string, required: false }
+      - { label: Body, name: body, widget: markdown, required: false }
+
+  - name: publications
+    label: Publications
+    label_singular: Publication
+    description: Papers, preprints, reports, policy briefs, and technical outputs.
+    folder: content/publications
+    path: "{{year}}/{{slug}}/index"
+    media_folder: ""
+    public_folder: ""
+    create: true
+    delete: true
+    extension: md
+    format: yaml-frontmatter
+    preview_path: publications/{{year}}/{{slug}}/
+    summary: "{{title}} - {{date}}"
+    sortable_fields: ["date", "title", "author"]
+    view_groups:
+      - label: Year
+        field: date
+        pattern: \d{4}
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Publish Date, name: date, widget: datetime, date_format: YYYY-MM-DD, time_format: false, format: YYYY-MM-DD }
+      - { label: Authors, name: author, widget: list, required: false, field: { label: Author, name: author, widget: string } }
+      - { label: Summary, name: summary, widget: text, required: true }
+      - label: Categories
+        name: categories
+        widget: select
+        multiple: true
+        required: false
+        options: ["Publications", "Preprints", "Reports", "Policy Briefs", "Technical Notes"]
+      - { label: Tags, name: tags, widget: list, required: false, field: { label: Tag, name: tag, widget: string } }
+      - label: Cover
+        name: cover
+        widget: object
+        required: false
+        collapsed: true
+        fields:
+          - label: Image
+            name: image
+            widget: image
+            required: false
+            choose_url: false
+            hint: Upload a JPEG, PNG, or WebP image. It will be resized and converted to WebP automatically (target 500 KB).
+            media_library:
+              config:
+                max_file_size: 1048576
+          - { label: Alt Text, name: alt, widget: string, required: false }
+          - { label: Caption, name: caption, widget: string, required: false }
+      - { label: Body, name: body, widget: markdown, required: false }
+
+  - name: jobs
+    label: Jobs / Opportunities
+    label_singular: Job / Opportunity
+    description: Vacancies, student projects, fellowships, consultancies, and expressions of interest.
+    folder: content/jobs
+    path: "{{year}}/{{slug}}/index"
+    media_folder: ""
+    public_folder: ""
+    create: true
+    delete: true
+    extension: md
+    format: yaml-frontmatter
+    preview_path: jobs/{{year}}/{{slug}}/
+    summary: "{{title}} - {{date}}"
+    sortable_fields: ["date", "title", "author"]
+    view_groups:
+      - label: Year
+        field: date
+        pattern: \d{4}
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Publish Date, name: date, widget: datetime, date_format: YYYY-MM-DD, time_format: false, format: YYYY-MM-DD }
+      - { label: Author, name: author, widget: string, required: false }
+      - { label: Summary, name: summary, widget: text, required: true }
+      - label: Categories
+        name: categories
+        widget: select
+        multiple: true
+        required: false
+        options: ["Jobs", "Opportunities", "Students", "Fellowships", "Consultancies"]
+      - { label: Tags, name: tags, widget: list, required: false, field: { label: Tag, name: tag, widget: string } }
+      - label: Cover
+        name: cover
+        widget: object
+        required: false
+        collapsed: true
+        fields:
+          - label: Image
+            name: image
+            widget: image
+            required: false
+            choose_url: false
+            hint: Upload a JPEG, PNG, or WebP image. It will be resized and converted to WebP automatically (target 500 KB).
+            media_library:
+              config:
+                max_file_size: 1048576
+          - { label: Alt Text, name: alt, widget: string, required: false }
+          - { label: Caption, name: caption, widget: string, required: false }
+      - { label: Body, name: body, widget: markdown, required: false }
+
+  - name: pages
+    label: Site Pages
+    description: Stable pages and section introductions.
+    files:
+      - label: Home Page
+        name: home
+        file: content/_index.md
+        extension: md
+        format: yaml-frontmatter
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: text, required: false }
+          - { label: Body, name: body, widget: markdown, required: false }
+      - label: About Us
+        name: about
+        file: content/about/_index.md
+        extension: md
+        format: yaml-frontmatter
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: text, required: false }
+          - { label: Body, name: body, widget: markdown, required: false }
+      - label: Collaboration
+        name: collaboration
+        file: content/collaboration/_index.md
+        extension: md
+        format: yaml-frontmatter
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: text, required: false }
+          - { label: Body, name: body, widget: markdown, required: false }
+      - label: News Section Intro
+        name: news_intro
+        file: content/news/_index.md
+        extension: md
+        format: yaml-frontmatter
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: text, required: false }
+          - { label: Body, name: body, widget: markdown, required: false }
+      - label: Models Section Intro
+        name: models_intro
+        file: content/models/_index.md
+        extension: md
+        format: yaml-frontmatter
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: text, required: false }
+          - { label: Body, name: body, widget: markdown, required: false }
+      - label: Publications Section Intro
+        name: publications_intro
+        file: content/publications/_index.md
+        extension: md
+        format: yaml-frontmatter
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: text, required: false }
+          - { label: Body, name: body, widget: markdown, required: false }
+      - label: Jobs Section Intro
+        name: jobs_intro
+        file: content/jobs/_index.md
+        extension: md
+        format: yaml-frontmatter
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: text, required: false }
+          - { label: Body, name: body, widget: markdown, required: false }

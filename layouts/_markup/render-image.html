@@ -1,0 +1,56 @@
+{{- $url := urls.Parse .Destination -}}
+{{- $src := $url.String -}}
+{{- $resource := false -}}
+{{- if not $url.IsAbs -}}
+  {{- $path := strings.TrimPrefix "./" $url.Path -}}
+  {{- with or (.PageInner.Resources.Get $path) (resources.Get $path) -}}
+    {{- $resource = . -}}
+    {{- $src = .RelPermalink -}}
+    {{- with $url.RawQuery -}}
+      {{- $src = printf "%s?%s" $src . -}}
+    {{- end -}}
+    {{- with $url.Fragment -}}
+      {{- $src = printf "%s#%s" $src . -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $processableFormats := slice "jpg" "jpeg" "png" "webp" -}}
+{{- $isProcessable := and $resource (in $processableFormats $resource.MediaType.SubType) -}}
+
+{{- if $isProcessable -}}
+  {{- $sizes := slice 480 800 1200 1600 -}}
+  <img
+    src="{{ $src }}"
+    srcset="
+      {{- range $size := $sizes -}}
+        {{- if ge $resource.Width $size -}}
+          {{- printf "%s %dw, " (($resource.Resize (printf "%dx" $size)).RelPermalink) $size -}}
+        {{- end -}}
+      {{- end -}}
+      {{- printf "%s %dw" $resource.RelPermalink $resource.Width -}}"
+    sizes="(min-width: 768px) 720px, 100vw"
+    width="{{ $resource.Width }}"
+    height="{{ $resource.Height }}"
+    alt="{{ .Text }}"
+    loading="lazy"
+    decoding="async"
+    {{- with .Title }} title="{{ . | transform.HTMLEscape }}"{{ end -}}
+    {{- range $key, $value := .Attributes -}}
+      {{- if and $value (not (in (slice "src" "srcset" "sizes" "width" "height" "alt" "loading" "decoding" "title") $key)) -}}
+        {{- printf " %s=%q" $key $value | safeHTMLAttr -}}
+      {{- end -}}
+    {{- end -}}>
+{{- else -}}
+  <img
+    src="{{ $src }}"
+    alt="{{ .Text }}"
+    loading="lazy"
+    decoding="async"
+    {{- with .Title }} title="{{ . | transform.HTMLEscape }}"{{ end -}}
+    {{- range $key, $value := .Attributes -}}
+      {{- if and $value (not (in (slice "src" "alt" "loading" "decoding" "title") $key)) -}}
+        {{- printf " %s=%q" $key $value | safeHTMLAttr -}}
+      {{- end -}}
+    {{- end -}}>
+{{- end -}}

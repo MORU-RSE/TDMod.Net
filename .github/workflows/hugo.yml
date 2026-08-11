@@ -37,8 +37,14 @@ jobs:
           hugo-version: ${{ env.HUGO_VERSION }}
           extended: true
 
+      - name: Validate CMS image optimizer
+        run: node --test tests/image-optimizer.test.js
+
+      - name: Validate media policy
+        run: bash scripts/validate-media.sh
+
       - name: Build
-        run: hugo --minify
+        run: hugo --minify --cleanDestinationDir
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

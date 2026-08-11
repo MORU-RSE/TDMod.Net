@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>TDMod.Net Content Manager</title>
+    <style>
+      #tdmod-image-status {
+        position: fixed;
+        right: 1rem;
+        bottom: 1rem;
+        z-index: 10000;
+        max-width: min(26rem, calc(100vw - 2rem));
+        padding: 0.8rem 1rem;
+        border-radius: 0.5rem;
+        background: #213547;
+        color: #fff;
+        box-shadow: 0 0.5rem 1.5rem rgb(0 0 0 / 20%);
+        font: 600 0.9rem/1.4 system-ui, sans-serif;
+      }
+
+      #tdmod-image-status[data-state="error"] {
+        background: #9b1c1c;
+      }
+
+      #tdmod-image-status[data-state="success"] {
+        background: #167447;
+      }
+
+      #tdmod-image-status[hidden] {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="tdmod-image-status" role="status" aria-live="polite" hidden></div>
+    <script src="image-optimizer.js"></script>
+    <script src="https://unpkg.com/decap-cms@3.15.1/dist/decap-cms.js"></script>
+  </body>
+</html>

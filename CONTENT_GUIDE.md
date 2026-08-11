@@ -15,8 +15,8 @@ This Hugo pattern is called a leaf bundle:
 ```text
 content/news/2026/example-post/
   index.md
-  cover.jpg
-  figure-1.png
+  cover.webp
+  figure-1.webp
   flyer.pdf
 ```
 
@@ -36,7 +36,7 @@ content/
       _index.md
       post-slug/
         index.md
-        cover.jpg
+        cover.webp
         attachment.pdf
 
   models/
@@ -45,8 +45,8 @@ content/
       _index.md
       project-slug/
         index.md
-        cover.jpg
-        model-diagram.png
+        cover.webp
+        model-diagram.webp
 
   publications/
     _index.md
@@ -54,7 +54,7 @@ content/
       _index.md
       publication-slug/
         index.md
-        cover.jpg
+        cover.webp
         paper.pdf
 
   jobs/
@@ -116,7 +116,7 @@ summary: "Short summary for listing pages."
 categories: ["News"]
 tags: ["training", "modelling"]
 cover:
-  image: "cover.jpg"
+  image: "cover.webp"
   alt: "Short image description"
 ---
 ```
@@ -138,22 +138,30 @@ For a page-specific cover image, put the image in the same folder as
 ```text
 content/news/2026/example-post/
   index.md
-  cover.jpg
+  cover.webp
 ```
 
 Then reference it in front matter:
 
 ```yaml
 cover:
-  image: "cover.jpg"
+  image: "cover.webp"
   alt: "Workshop participants during a modelling session"
 ```
 
 For inline images, use normal Markdown:
 
 ```markdown
-![Workshop participants](workshop-photo.jpg)
+![Workshop participants](workshop-photo.webp)
 ```
+
+When an editor uploads a JPEG, PNG, or WebP file through `/admin/`, the browser
+automatically resizes it to at most 1600 pixels on its longest side and converts
+it to a WebP file targeting 500 KB. GIF, BMP, TIFF, and SVG uploads are not
+accepted. Always add useful alt text in the CMS.
+
+Images committed manually must be no larger than 1 MB. Run
+`bash scripts/validate-media.sh` before committing manual image changes.
 
 If a post does not have `cover.image`, the site automatically uses a
 section-based template image from:
@@ -180,5 +188,6 @@ Before publishing a new page, check that:
 - The page is in the correct section and year folder.
 - The title, date, author, summary, categories, and tags are filled in.
 - Images have useful `alt` text.
+- New raster images are WebP where practical and no file is larger than 1 MB.
 - Links to PDFs, papers, repositories, or partner websites work.
 - The page builds locally with `hugo --minify --cleanDestinationDir`.
