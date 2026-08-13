@@ -59,6 +59,7 @@ collections:
         widget: select
         multiple: true
         required: false
+        hint: Groups this entry on the /categories/ browse page. Not shown on the post itself — pick one or more.
         options: ["News", "Activities", "Events", "Training", "Announcements"]
       - { label: Tags, name: tags, widget: list, required: false, field: { label: Tag, name: tag, widget: string } }
       - label: Cover
@@ -112,6 +113,7 @@ collections:
         widget: select
         multiple: true
         required: false
+        hint: Groups this entry on the /categories/ browse page. Not shown on the post itself — pick one or more.
         options: ["Models", "Projects", "Software", "Workflows", "Dashboards"]
       - { label: Tags, name: tags, widget: list, required: false, field: { label: Tag, name: tag, widget: string } }
       - label: Cover
@@ -165,6 +167,7 @@ collections:
         widget: select
         multiple: true
         required: false
+        hint: Groups this entry on the /categories/ browse page. Not shown on the post itself — pick one or more.
         options: ["Publications", "Preprints", "Reports", "Policy Briefs", "Technical Notes"]
       - { label: Tags, name: tags, widget: list, required: false, field: { label: Tag, name: tag, widget: string } }
       - label: Cover
@@ -218,6 +221,7 @@ collections:
         widget: select
         multiple: true
         required: false
+        hint: Groups this entry on the /categories/ browse page. Not shown on the post itself — pick one or more.
         options: ["Jobs", "Opportunities", "Students", "Fellowships", "Consultancies"]
       - { label: Tags, name: tags, widget: list, required: false, field: { label: Tag, name: tag, widget: string } }
       - label: Cover

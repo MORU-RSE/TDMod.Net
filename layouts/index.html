@@ -49,6 +49,7 @@
         {{- partial "td-card-cover.html" . -}}
         <div class="td-card-meta">
           <span>{{ $label }}</span>
+          {{- if .Draft }}<span class="td-card-draft">Draft</span>{{ end }}
           <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format $dateFormat }}</time>
           {{- with (partial "author.html" .) }}
           <span class="td-card-author">Written by {{ . }}</span>
