@@ -335,6 +335,16 @@ a {
   font-weight: 400 !important;
 }
 
+/* Only ever visible in `hugo server --buildDrafts`; drafts are excluded from the
+   production build, so this badge marks posts that are not on the live site. */
+.td-card-draft {
+  background: #9b1c1c;
+  border-radius: 999px;
+  color: #fff !important;
+  letter-spacing: 0.04em;
+  padding: 1px 8px;
+}
+
 .td-sidebar {
   align-content: start;
   display: grid;
