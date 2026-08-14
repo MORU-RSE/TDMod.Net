@@ -16,8 +16,8 @@ tag = "tags"
 series = "series"
 
 [params]
-description = "A research and modelling group website for news, activities, models, publications, job opportunities, and collaboration."
-keywords = ["modelling", "research", "public health", "epidemiology", "publications", "collaboration"]
+description = "The Tropical Diseases Modelling Network: mathematical and economic modelling for the transmission, control, and elimination of tropical diseases in Southeast Asia."
+keywords = ["modelling", "tropical diseases", "malaria elimination", "antimicrobial resistance", "neglected tropical diseases", "health economics", "epidemiology", "Southeast Asia", "MORU", "MAEMOD"]
 defaultTheme = "light"
 disableThemeToggle = true
 disableSpecial1stPost = true
@@ -58,54 +58,54 @@ collaboration = "images/post-templates/collaboration.svg"
 default = "images/post-templates/default.svg"
 
 [params.home.hero]
-eyebrow = "Research and modelling network"
+eyebrow = "Tropical Diseases Modelling Network"
 title = "TDMod.Net"
-subtitle = "Providing a simple forum for sharing, discussing, and documenting modelling research, activities, publications, opportunities, and collaboration."
+subtitle = "Mathematical and economic modelling for the transmission, control, and elimination of tropical diseases across Southeast Asia and the wider tropics."
 primaryText = "Latest News"
 primaryURL = "news/"
 secondaryText = "Collaborate"
 secondaryURL = "collaboration/"
 
 [[params.home.metrics]]
+value = "SE Asia"
+label = "regional research focus"
+
+[[params.home.metrics]]
 value = "Open"
-label = "research outputs"
+label = "models, tools, and code"
 
 [[params.home.metrics]]
-value = "Active"
-label = "models and projects"
-
-[[params.home.metrics]]
-value = "Global"
-label = "collaboration network"
+value = "Regional"
+label = "modelling and training network"
 
 [[params.home.focusAreas]]
-title = "Mathematical Modelling"
-text = "Transmission models, statistical workflows, and decision-support tools for public health research."
+title = "Malaria Elimination"
+text = "Transmission and costing models built with National Malaria Control Programmes to compare elimination strategies."
 url = "models/"
 
 [[params.home.focusAreas]]
-title = "Research Updates"
-text = "News, field activities, meetings, training, workshops, and group announcements."
-url = "news/"
+title = "Antimicrobial Resistance"
+text = "Resistance emergence and spread, hospital transmission, economic burden, and data-driven prescribing."
+url = "models/"
 
 [[params.home.focusAreas]]
-title = "Publications"
-text = "Peer-reviewed papers, preprints, technical reports, policy briefs, and reproducible outputs."
-url = "publications/"
+title = "Neglected Tropical Diseases"
+text = "Modelling leptospirosis, melioidosis, dengue, tuberculosis, and hepatitis alongside survey and community data."
+url = "models/"
 
 [[params.home.quickLinks]]
-title = "Browse the Archive"
-text = "See all posts by date across news, models, publications, jobs, and collaboration updates."
-url = "archives/"
+title = "Models and Tools"
+text = "Browse open transmission models, economic analyses, and interactive applications from across the network."
+url = "models/"
 
 [[params.home.quickLinks]]
-title = "Search the Site"
-text = "Find people, models, activities, publications, and opportunities across the website."
-url = "search/"
+title = "Training and Opportunities"
+text = "Short courses, workshops, student projects, and open positions with the network and its partners."
+url = "jobs/"
 
 [[params.home.quickLinks]]
 title = "Work With Us"
-text = "Explore collaboration routes, project ideas, and ways to connect with the research group."
+text = "Joint projects, support for national programmes, capacity building, and student supervision."
 url = "collaboration/"
 
 [params.fuseOpts]

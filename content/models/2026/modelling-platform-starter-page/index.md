@@ -1,11 +1,17 @@
 ---
 entry_type: post
-title: "Modelling Platform Starter Page"
+title: Modelling Platform Starter Page
 date: 2026-05-15
-author: "Modelling Team"
-summary: "A starter project page for describing a model, software tool, or reproducible research workflow."
-categories: ["Models"]
-tags: ["model", "software", "workflow"]
+draft: false
+author: Modelling Team
+summary: A starter project page for describing a model, software tool, or
+  reproducible research workflow.
+categories:
+  - Models
+tags:
+  - model
+  - software
+  - workflow
 ---
 
 This is a starter project page. Replace it with a real modelling project, software tool, or reproducible workflow.

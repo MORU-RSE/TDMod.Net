@@ -1,6 +1,4 @@
 ---
 title: "News / Activities"
-description: "News, activities, meetings, workshops, field updates, and group announcements."
+description: "Network news, training courses, workshops, meetings, seminars, field activities, and software releases."
 ---
-
-This section collects short updates from the group, including meetings, workshops, research activities, field work, software releases, seminars, and announcements.
