@@ -35,7 +35,6 @@
   <section class="td-feed" aria-labelledby="td-latest-title">
     <div class="td-section__header">
       <h2 id="td-latest-title">Latest Updates</h2>
-      <a href="{{ "archives/" | relURL }}">Archive</a>
     </div>
 
     {{- $sections := site.Params.mainSections | default (slice "news") -}}
@@ -73,7 +72,7 @@
         {{- range . }}
         <li>
           <a href="{{ .url | relURL }}">{{ .title }}</a>
-          <p>{{ .text }}</p>
+          {{- with .text }}<p>{{ . }}</p>{{ end }}
         </li>
         {{- end }}
       </ul>
@@ -94,14 +93,6 @@
       </ul>
     </section>
     {{- end }}
-
-    <section class="td-panel">
-      <h2>Feeds</h2>
-      <ul class="td-link-list td-link-list--simple">
-        <li><a href="{{ "index.xml" | relURL }}">RSS feed</a></li>
-        <li><a href="{{ "tags/" | relURL }}">Tags</a></li>
-      </ul>
-    </section>
   </aside>
 </div>
 {{- end }}

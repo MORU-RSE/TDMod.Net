@@ -23,7 +23,7 @@ ShowBreadCrumbs = true
 ShowCodeCopyButtons = true
 ShowPostNavLinks = true
 ShowReadingTime = true
-ShowRssButtonInSectionTermList = true
+ShowRssButtonInSectionTermList = false
 ShowShareButtons = false
 ShowToc = true
 TocOpen = false
@@ -92,19 +92,14 @@ text = "Modelling leptospirosis, melioidosis, dengue, tuberculosis, and hepatiti
 url = "models/"
 
 [[params.home.quickLinks]]
-title = "Models and Tools"
-text = "Browse open transmission models, economic analyses, and interactive applications from across the network."
-url = "models/"
+title = "Tags"
+text = "Browse every post by topic."
+url = "tags/"
 
 [[params.home.quickLinks]]
-title = "Training and Opportunities"
-text = "Short courses, workshops, student projects, and open positions with the network and its partners."
-url = "jobs/"
-
-[[params.home.quickLinks]]
-title = "Work With Us"
-text = "Joint projects, support for national programmes, capacity building, and student supervision."
-url = "collaboration/"
+title = "Archive"
+text = "All posts from every section, listed by date."
+url = "archives/"
 
 [params.fuseOpts]
 isCaseSensitive = false
