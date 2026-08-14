@@ -4,7 +4,6 @@ title: "Launching the New Research Website"
 date: 2026-05-18
 author: "TDMod.Net Team"
 summary: "A starter announcement for the new Hugo website and its main content sections."
-categories: ["News"]
 tags: ["website", "hugo", "research group"]
 cover:
   image: "cover.svg"

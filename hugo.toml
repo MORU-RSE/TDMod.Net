@@ -11,9 +11,7 @@ pagerSize = 6
 home = ["HTML", "RSS", "JSON"]
 
 [taxonomies]
-category = "categories"
 tag = "tags"
-series = "series"
 
 [params]
 description = "The Tropical Diseases Modelling Network: mathematical and economic modelling for the transmission, control, and elimination of tropical diseases in Southeast Asia."

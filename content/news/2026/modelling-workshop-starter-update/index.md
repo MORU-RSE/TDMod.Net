@@ -4,7 +4,6 @@ title: "Modelling Workshop Starter Update"
 date: 2026-05-10
 author: "Training Team"
 summary: "A sample activity post for workshops, meetings, seminars, or training announcements."
-categories: ["Activities"]
 tags: ["workshop", "training", "modelling"]
 ---
 

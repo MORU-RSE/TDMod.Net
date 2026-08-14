@@ -60,13 +60,6 @@ collections:
       - { label: Draft, name: draft, widget: boolean, default: true, hint: Leave this on while you are writing. Turn it off to publish to the live site. }
       - { label: Author, name: author, widget: string, required: false }
       - { label: Summary, name: summary, widget: text, required: true, hint: Short text shown on listing pages. }
-      - label: Categories
-        name: categories
-        widget: select
-        multiple: true
-        required: false
-        hint: Groups this entry on the /categories/ browse page. Not shown on the post itself — pick one or more.
-        options: ["News", "Activities", "Events", "Training", "Announcements"]
       - { label: Tags, name: tags, widget: list, required: false, field: { label: Tag, name: tag, widget: string } }
       - label: Cover
         name: cover
@@ -120,13 +113,6 @@ collections:
       - { label: Draft, name: draft, widget: boolean, default: true, hint: Leave this on while you are writing. Turn it off to publish to the live site. }
       - { label: Author, name: author, widget: string, required: false }
       - { label: Summary, name: summary, widget: text, required: true }
-      - label: Categories
-        name: categories
-        widget: select
-        multiple: true
-        required: false
-        hint: Groups this entry on the /categories/ browse page. Not shown on the post itself — pick one or more.
-        options: ["Models", "Projects", "Software", "Workflows", "Dashboards"]
       - { label: Tags, name: tags, widget: list, required: false, field: { label: Tag, name: tag, widget: string } }
       - label: Cover
         name: cover
@@ -180,13 +166,6 @@ collections:
       - { label: Draft, name: draft, widget: boolean, default: true, hint: Leave this on while you are writing. Turn it off to publish to the live site. }
       - { label: Authors, name: author, widget: list, required: false, field: { label: Author, name: author, widget: string } }
       - { label: Summary, name: summary, widget: text, required: true }
-      - label: Categories
-        name: categories
-        widget: select
-        multiple: true
-        required: false
-        hint: Groups this entry on the /categories/ browse page. Not shown on the post itself — pick one or more.
-        options: ["Publications", "Preprints", "Reports", "Policy Briefs", "Technical Notes"]
       - { label: Tags, name: tags, widget: list, required: false, field: { label: Tag, name: tag, widget: string } }
       - label: Cover
         name: cover
@@ -240,13 +219,6 @@ collections:
       - { label: Draft, name: draft, widget: boolean, default: true, hint: Leave this on while you are writing. Turn it off to publish to the live site. }
       - { label: Author, name: author, widget: string, required: false }
       - { label: Summary, name: summary, widget: text, required: true }
-      - label: Categories
-        name: categories
-        widget: select
-        multiple: true
-        required: false
-        hint: Groups this entry on the /categories/ browse page. Not shown on the post itself — pick one or more.
-        options: ["Jobs", "Opportunities", "Students", "Fellowships", "Consultancies"]
       - { label: Tags, name: tags, widget: list, required: false, field: { label: Tag, name: tag, widget: string } }
       - label: Cover
         name: cover

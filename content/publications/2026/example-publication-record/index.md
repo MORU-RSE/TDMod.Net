@@ -4,7 +4,6 @@ title: "Example Publication Record"
 date: 2026-05-12
 author: ["First Author", "Second Author"]
 summary: "A placeholder publication entry showing how publications can be listed on the site."
-categories: ["Publications"]
 tags: ["publication", "preprint", "methods"]
 cover:
   image: "cover.svg"

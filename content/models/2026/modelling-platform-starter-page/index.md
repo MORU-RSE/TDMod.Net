@@ -6,8 +6,6 @@ draft: false
 author: Modelling Team
 summary: A starter project page for describing a model, software tool, or
   reproducible research workflow.
-categories:
-  - Models
 tags:
   - model
   - software
