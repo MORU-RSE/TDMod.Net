@@ -38,5 +38,43 @@ This site includes a Decap CMS admin interface at `/TDMod.Net/admin/` on
 GitHub Pages (`/admin/` in local development), so editors can manage content
 through a browser instead of editing Markdown files directly.
 
-See `CMS_GUIDE.md` for the current setup notes, GitHub authentication
-requirements, direct publishing behavior, and automatic image optimization.
+Editors manage the four feed sections — news, models, publications, and jobs.
+The home page, About, Collaboration, and the section introductions are edited in
+the repository by a developer.
+
+Documentation:
+
+- `CMS_GUIDE.md` — running the CMS: GitHub authentication, the Draft toggle and
+  publishing behaviour, image optimization, and media growth limits.
+- `CONTENT_GUIDE.md` — writing content: folder layout, front matter fields,
+  slugs, covers, and the pre-publish checklist.
+
+## Local Development
+
+The PaperMod theme is a git submodule, so a fresh clone needs it initialised:
+
+```sh
+git clone https://github.com/MORU-RSE/TDMod.Net.git
+cd TDMod.Net
+git submodule update --init --recursive
+hugo server
+```
+
+Use plain `hugo server`, not `hugo server -D`: the `-D` flag builds draft pages,
+so drafts appear locally that will never appear on the live site.
+
+To exercise the CMS locally, run `npx decap-server` alongside `hugo server` and
+open `http://localhost:1313/admin/`. The local backend writes straight to the
+working copy, so no GitHub login is required.
+
+Checks the deployment also runs:
+
+```sh
+node --test tests/image-optimizer.test.js
+bash scripts/validate-media.sh
+bash scripts/prune-orphan-bundles.sh
+hugo --minify --cleanDestinationDir
+```
+
+Editors publish by committing to `main` through the CMS, so pull before starting
+local work.

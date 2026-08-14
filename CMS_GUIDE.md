@@ -9,7 +9,11 @@ GitHub Pages deployment and `/admin/` in local development.
 - Models / Projects
 - Publications
 - Jobs / Opportunities
-- Home, About, Collaboration, and section introduction pages
+
+That is the whole list. The home page, About, Collaboration, and the section
+introduction pages are **not** in the CMS: they change rarely and are edited in
+`content/**/_index.md` by a developer. Homepage copy such as the hero text,
+metrics, and quick links lives in `hugo.toml` and is likewise developer-edited.
 
 New feed items are saved as Hugo leaf bundles, for example:
 
@@ -66,6 +70,36 @@ Useful Decap docs:
 which starts the existing GitHub Pages deployment workflow. Every editor is
 therefore a publisher.
 
+### The Draft toggle decides what is public, not the Publish button
+
+Each entry has a **Draft** switch that is on by default. It maps to Hugo's
+`draft` front matter, and the deployment builds without `--buildDrafts`, so a
+draft entry is never rendered on the live site.
+
+This means "Publish" in the CMS only means "commit to the repository". An entry
+saved with Draft still on is stored safely and stays invisible to the public.
+Turning Draft off and saving is what puts a page on the site, about a minute
+later once the workflow finishes.
+
+The Publish button also offers "Publish and create new" and "Publish and
+duplicate". All three save identically; they differ only in what the editor sees
+next, with duplicate pre-filling a copy of the current entry.
+
+### Do not change the year of an existing entry
+
+An entry's folder is chosen from `date` when it is first saved. Editing the year
+afterwards leaves the original behind and writes a second copy under the new
+year. If the year is wrong, delete the entry and create it again.
+
+## Deleting Entries
+
+Deleting an entry in the CMS removes only its `index.md`, so the folder and any
+uploaded images would otherwise stay in the repository and keep being published.
+The deployment workflow runs `scripts/prune-orphan-bundles.sh` before building,
+which deletes any `content/<section>/<year>/<slug>/` folder that has no
+`index.md` and commits the removal. Editors do not need to do anything; the
+folder disappears within a minute of the delete.
+
 ## Image Uploads
 
 The admin page optimizes image uploads in the browser before Decap receives
@@ -114,7 +148,11 @@ Always verify the site after CMS configuration changes:
 hugo --minify --cleanDestinationDir
 node --test tests/image-optimizer.test.js
 bash scripts/validate-media.sh
+bash scripts/prune-orphan-bundles.sh
 ```
+
+Use plain `hugo server` rather than `hugo server -D` when checking local output:
+`-D` builds drafts, which hides the effect of the Draft toggle.
 
 Before handing the CMS to editors, confirm that the OAuth Worker redirects to
 GitHub:

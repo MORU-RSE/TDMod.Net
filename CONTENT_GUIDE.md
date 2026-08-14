@@ -97,6 +97,10 @@ research themes, contact routes, and governance.
 
 - Use `section/year/page-slug/index.md` for news, models, publications, and
   jobs.
+- The year folder comes from `date` at the moment the page is first saved.
+  Changing the year afterwards makes a second copy in the new year's folder
+  instead of moving the page. If the year is wrong, delete the page and create
+  it again.
 - Use lowercase slugs with hyphens, for example `modelling-workshop-2026`.
 - Keep page-specific images, PDFs, and attachments inside the same page folder.
 - Use `static/images/` only for shared site assets such as banners, logos,
@@ -109,11 +113,12 @@ Each post or record should start with front matter like this:
 
 ```yaml
 ---
+entry_type: post
 title: "Project or Post Title"
 date: 2026-05-18
+draft: false
 author: "Author Name"
 summary: "Short summary for listing pages."
-categories: ["News"]
 tags: ["training", "modelling"]
 cover:
   image: "cover.webp"
@@ -121,14 +126,37 @@ cover:
 ---
 ```
 
+`entry_type: post` is required. The CMS filters each section on this field so
+that `_index.md` section and year pages do not appear in the entry list. A page
+created by hand without it will build fine but stay invisible in `/admin/`.
+
+`draft: true` keeps a page out of the build entirely, which is how work in
+progress is saved without publishing it. The deployment runs `hugo --minify`
+with no `--buildDrafts`, so a draft never reaches the live site. Note that
+`hugo server -D` does include drafts, so use plain `hugo server` when you want
+local output to match production.
+
 Use `summary` for the short text shown in listing pages. Keep it concise,
 usually one sentence.
 
-Multiple authors are supported:
+Publications take a list of authors, because the CMS uses a list field there:
 
 ```yaml
 author: ["First Author", "Second Author"]
 ```
+
+News, models, and jobs use a single author field instead. A plain string is
+correct for those:
+
+```yaml
+author: "TDMod.Net Team"
+```
+
+There is no `categories` field. Sections already group content, so `/news/` and
+a `News` category were the same list twice. Use `tags` for cross-cutting topics
+instead — each tag gets its own page under `/tags/`. Prefer reusing a tag that
+already exists over inventing a near-duplicate, since `model` and `modelling`
+become two unrelated pages.
 
 ## Covers And Images
 
@@ -186,7 +214,9 @@ static/images/post-templates/default.svg
 Before publishing a new page, check that:
 
 - The page is in the correct section and year folder.
-- The title, date, author, summary, categories, and tags are filled in.
+- `entry_type: post` is present, so the page is editable in `/admin/`.
+- The title, date, author, summary, and tags are filled in.
+- `draft` is turned off when the page is meant to go live.
 - Images have useful `alt` text.
 - New raster images are WebP where practical and no file is larger than 1 MB.
 - Links to PDFs, papers, repositories, or partner websites work.
