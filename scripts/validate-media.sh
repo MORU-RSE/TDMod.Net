@@ -18,11 +18,7 @@ fi
 is_approved_svg() {
   case "$1" in
     static/images/research-banner.svg | \
-      static/images/post-templates/*.svg | \
-      content/news/2026/launching-the-new-website/cover.svg | \
-      content/news/2026/launching-the-new-website/figure-1.svg | \
-      content/publications/2026/example-publication-record/cover.svg | \
-      content/publications/2026/example-publication-record/graphical-abstract.svg)
+      static/images/post-templates/*.svg)
       return 0
       ;;
     *)

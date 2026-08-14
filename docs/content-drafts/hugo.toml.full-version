@@ -1,0 +1,166 @@
+baseURL = "https://moru-rse.github.io/TDMod.Net/"
+languageCode = "en-us"
+title = "TDMod.Net"
+theme = "PaperMod"
+enableRobotsTXT = true
+
+[pagination]
+pagerSize = 6
+
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+series = "series"
+
+[params]
+description = "The Tropical Diseases Modelling Network: mathematical and economic modelling for the transmission, control, and elimination of tropical diseases in Southeast Asia."
+keywords = ["modelling", "tropical diseases", "malaria elimination", "antimicrobial resistance", "neglected tropical diseases", "health economics", "epidemiology", "Greater Mekong Subregion", "MORU", "MAEMOD"]
+defaultTheme = "light"
+disableThemeToggle = true
+disableSpecial1stPost = true
+ShowBreadCrumbs = true
+ShowCodeCopyButtons = true
+ShowPostNavLinks = true
+ShowReadingTime = true
+ShowRssButtonInSectionTermList = true
+ShowShareButtons = false
+ShowToc = true
+TocOpen = false
+DateFormat = "2 January 2006"
+mainSections = ["news", "models", "publications", "jobs", "collaboration"]
+
+[params.label]
+text = "TDMod.Net"
+
+[params.brand]
+tagline = "Tropical Diseases Modelling Network"
+
+[params.assets]
+theme_color = "#741d29"
+msapplication_TileColor = "#741d29"
+# Keeps the built stylesheet at the stable path assets/css/stylesheet.css so the
+# Decap preview pane in static/admin/index.html can load the real site styles.
+disableFingerprinting = true
+
+[params.defaultCover]
+enabled = true
+showInSingle = true
+
+[params.defaultCover.images]
+news = "images/post-templates/news.svg"
+models = "images/post-templates/models.svg"
+publications = "images/post-templates/publications.svg"
+jobs = "images/post-templates/jobs.svg"
+collaboration = "images/post-templates/collaboration.svg"
+default = "images/post-templates/default.svg"
+
+[params.home.hero]
+eyebrow = "Tropical Diseases Modelling Network"
+title = "TDMod.Net"
+subtitle = "Mathematical and economic modelling for the transmission, control, and elimination of tropical diseases across the Greater Mekong Subregion and the wider tropics."
+primaryText = "Latest News"
+primaryURL = "news/"
+secondaryText = "Collaborate"
+secondaryURL = "collaboration/"
+
+[[params.home.metrics]]
+value = "GMS"
+label = "Greater Mekong Subregion focus"
+
+[[params.home.metrics]]
+value = "Open"
+label = "models, tools, and code"
+
+[[params.home.metrics]]
+value = "Regional"
+label = "modelling and training network"
+
+[[params.home.focusAreas]]
+title = "Malaria Elimination"
+text = "Transmission and costing models built with National Malaria Control Programmes to compare elimination strategies."
+url = "models/"
+
+[[params.home.focusAreas]]
+title = "Antimicrobial Resistance"
+text = "Resistance emergence and spread, hospital transmission, economic burden, and data-driven prescribing."
+url = "models/"
+
+[[params.home.focusAreas]]
+title = "Neglected Tropical Diseases"
+text = "Modelling leptospirosis, melioidosis, dengue, tuberculosis, and hepatitis alongside survey and community data."
+url = "models/"
+
+[[params.home.quickLinks]]
+title = "Models and Tools"
+text = "Browse open transmission models, economic analyses, and interactive applications from across the network."
+url = "models/"
+
+[[params.home.quickLinks]]
+title = "Training and Opportunities"
+text = "Short courses, workshops, student projects, and open positions with the network and its partners."
+url = "jobs/"
+
+[[params.home.quickLinks]]
+title = "Work With Us"
+text = "Joint projects, support for national programmes, capacity building, and student supervision."
+url = "collaboration/"
+
+[params.fuseOpts]
+isCaseSensitive = false
+shouldSort = true
+location = 0
+distance = 1000
+threshold = 0.4
+minMatchCharLength = 2
+keys = ["title", "permalink", "summary", "content"]
+
+[[menu.main]]
+identifier = "home"
+name = "Home"
+url = "/"
+weight = 10
+
+[[menu.main]]
+identifier = "about"
+name = "About us"
+url = "about/"
+weight = 20
+
+[[menu.main]]
+identifier = "news"
+name = "News / Activities"
+url = "news/"
+weight = 30
+
+[[menu.main]]
+identifier = "models"
+name = "Models / Projects"
+url = "models/"
+weight = 40
+
+[[menu.main]]
+identifier = "publications"
+name = "Publications"
+url = "publications/"
+weight = 50
+
+[[menu.main]]
+identifier = "jobs"
+name = "Jobs"
+url = "jobs/"
+weight = 60
+
+[[menu.main]]
+identifier = "collaboration"
+name = "Collaboration"
+url = "collaboration/"
+weight = 70
+
+[[menu.main]]
+identifier = "search"
+name = "Search"
+url = "search/"
+weight = 80
