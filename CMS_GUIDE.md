@@ -6,7 +6,6 @@ GitHub Pages deployment and `/admin/` in local development.
 ## What Editors Can Manage
 
 - News / Activities
-- Models / Projects
 - Publications
 - Jobs / Opportunities
 

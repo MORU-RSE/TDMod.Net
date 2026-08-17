@@ -39,15 +39,6 @@ content/
         cover.webp
         attachment.pdf
 
-  models/
-    _index.md
-    2026/
-      _index.md
-      project-slug/
-        index.md
-        cover.webp
-        model-diagram.webp
-
   publications/
     _index.md
     2026/
@@ -74,10 +65,6 @@ content/
 Use `news/` for group announcements, meetings, workshops, seminars, training,
 field updates, website updates, and other short activity posts.
 
-Use `models/` for modelling projects, software tools, dashboards, analysis
-workflows, data pipelines, reproducible research resources, and project status
-pages.
-
 Use `publications/` for papers, preprints, reports, policy briefs, technical
 documents, and other research outputs. Attach PDFs or figures in the same page
 folder when appropriate.
@@ -95,8 +82,7 @@ research themes, contact routes, and governance.
 
 ## File And Slug Rules
 
-- Use `section/year/page-slug/index.md` for news, models, publications, and
-  jobs.
+- Use `section/year/page-slug/index.md` for news, publications, and jobs.
 - The year folder comes from `date` at the moment the page is first saved.
   Changing the year afterwards makes a second copy in the new year's folder
   instead of moving the page. If the year is wrong, delete the page and create
@@ -145,7 +131,7 @@ Publications take a list of authors, because the CMS uses a list field there:
 author: ["First Author", "Second Author"]
 ```
 
-News, models, and jobs use a single author field instead. A plain string is
+News and jobs use a single author field instead. A plain string is
 correct for those:
 
 ```yaml
@@ -202,7 +188,6 @@ Current default templates:
 
 ```text
 static/images/post-templates/news.svg
-static/images/post-templates/models.svg
 static/images/post-templates/publications.svg
 static/images/post-templates/jobs.svg
 static/images/post-templates/collaboration.svg

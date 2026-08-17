@@ -138,7 +138,7 @@
           },
         });
 
-        ['news', 'models', 'publications', 'jobs'].forEach(function register(name) {
+        ['news', 'publications', 'jobs'].forEach(function register(name) {
           CMS.registerPreviewTemplate(name, FeedPreview);
         });
       })(window.CMS);

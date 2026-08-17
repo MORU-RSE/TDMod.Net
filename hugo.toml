@@ -28,7 +28,7 @@ ShowShareButtons = false
 ShowToc = true
 TocOpen = false
 DateFormat = "2 January 2006"
-mainSections = ["news", "models", "publications", "jobs", "collaboration"]
+mainSections = ["news", "publications", "jobs", "collaboration"]
 
 [params.label]
 text = "TDMod.Net"
@@ -49,7 +49,6 @@ showInSingle = true
 
 [params.defaultCover.images]
 news = "images/post-templates/news.svg"
-models = "images/post-templates/models.svg"
 publications = "images/post-templates/publications.svg"
 jobs = "images/post-templates/jobs.svg"
 collaboration = "images/post-templates/collaboration.svg"
@@ -79,17 +78,17 @@ label = "modelling and training network"
 [[params.home.focusAreas]]
 title = "Malaria Elimination"
 text = "Transmission and costing models built with National Malaria Control Programmes to compare elimination strategies."
-url = "models/"
+url = "publications/"
 
 [[params.home.focusAreas]]
 title = "Antimicrobial Resistance"
 text = "Resistance emergence and spread, hospital transmission, economic burden, and data-driven prescribing."
-url = "models/"
+url = "publications/"
 
 [[params.home.focusAreas]]
 title = "Neglected Tropical Diseases"
 text = "Modelling leptospirosis, melioidosis, dengue, tuberculosis, and hepatitis alongside survey and community data."
-url = "models/"
+url = "publications/"
 
 [[params.home.quickLinks]]
 title = "Tags"
@@ -127,12 +126,6 @@ identifier = "news"
 name = "News / Activities"
 url = "news/"
 weight = 30
-
-[[menu.main]]
-identifier = "models"
-name = "Models / Projects"
-url = "models/"
-weight = 40
 
 [[menu.main]]
 identifier = "publications"

@@ -26,7 +26,6 @@ The website is organized into the following main sections:
 content/
   about/           Group overview and general information
   news/            News, events, activities, and announcements
-  models/          Modelling projects, tools, and workflows
   publications/    Publications and research outputs
   jobs/            Opportunities and expressions of interest
   collaboration/   Collaboration information and partner links
@@ -38,7 +37,7 @@ This site includes a Decap CMS admin interface at `/TDMod.Net/admin/` on
 GitHub Pages (`/admin/` in local development), so editors can manage content
 through a browser instead of editing Markdown files directly.
 
-Editors manage the four feed sections — news, models, publications, and jobs.
+Editors manage the three feed sections — news, publications, and jobs.
 The home page, About, Collaboration, and the section introductions are edited in
 the repository by a developer.
 

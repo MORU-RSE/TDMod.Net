@@ -11,7 +11,7 @@ The Tropical Diseases Modelling Network was created to link modelling groups wor
 - **Support for national programmes.** Work with ministries of health and national disease control programmes to turn surveillance and intervention data into strategy and resource-allocation analyses.
 - **Training and capacity building.** Short courses, workshops, and longer attachments for researchers and programme staff who want to build modelling and data analysis skills in their own institutions.
 - **Student supervision and placements.** Co-supervision of PhD, DPhil, and MSc students, and research placements hosted by network members.
-- **Reuse of our tools.** Our models, applications, and code are published openly under [Models / Projects]({{< relref "/models" >}}); we are glad to hear from people adapting them to new settings.
+- **Reuse of our tools.** Our models, applications, and code are published openly alongside our [Publications]({{< relref "/publications" >}}); we are glad to hear from people adapting them to new settings.
 
 If you would like to discuss any of these, please get in touch through the contact routes on the [About us]({{< relref "/about" >}}) page.
 
