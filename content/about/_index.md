@@ -37,6 +37,9 @@ Members contribute to Mahidol University's MSc in Biomedical and Health Informat
 
 ## Contact
 
-Enquiries about the network, its models, and collaboration can be directed through the [MAEMOD department at MORU](https://www.tropmedres.ac/units/moru-bangkok/mathematical-and-economic-modelling).
+Enquiries about the network, its models, and collaboration can be directed through the [MAEMOD department at MORU](https://maemod-moru.github.io/), or to:
 
-<!-- TODO: replace with the network's own contact email and postal address once confirmed. -->
+- Sureeporn Thongkuna — [sureeporn@tropmedres.ac](mailto:sureeporn@tropmedres.ac)
+- Tanakorn Waleecharoenpong — [tanakorn@tropmedres.ac](mailto:tanakorn@tropmedres.ac)
+
+<!-- TODO: add the network's postal address once confirmed. -->

@@ -32,8 +32,7 @@ Members work with research units and partners across the MORU network and the wi
 - [Myanmar Oxford Clinical Research Unit (MOCRU)](https://www.tropmedres.ac/units/mocru-myanmar)
 - [Shoklo Malaria Research Unit (SMRU)](https://www.tropmedres.ac/units/smru-thailand)
 
-We also work directly with National Malaria Control Programmes and ministries of health across the region.
 
 ## Funders
 
-Work across the network is supported by the [Wellcome Trust](https://wellcome.org/). Funding for individual projects is acknowledged on the relevant project and publication pages.
+This research was funded in whole, by the [Wellcome Trust](https://wellcome.org/) [315982/Z/24/1].
