@@ -2,7 +2,7 @@
 entry_type: post
 title: MOM-Learn
 date: 2026-08-31
-draft: true
+draft: false
 author: Tanaphum Wichaita
 summary: MOM Learn is an interactive training website for learning Plasmodium
   falciparum blood-stage morphology and recognizing parasite changes associated
