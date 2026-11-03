@@ -1,5 +1,9 @@
 baseURL = "https://moru-rse.github.io/TDMod.Net/"
 languageCode = "en-us"
+# Front matter dates carry no time zone, so read them as Bangkok dates. Under the
+# default (UTC) a post dated today counts as future until 07:00 Bangkok time and
+# is left out of the build.
+timeZone = "Asia/Bangkok"
 title = "TDMod.Net"
 theme = "PaperMod"
 enableRobotsTXT = true

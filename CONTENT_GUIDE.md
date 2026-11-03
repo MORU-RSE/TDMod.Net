@@ -88,6 +88,12 @@ research themes, contact routes, and governance.
   instead of moving the page. If the year is wrong, delete the page and create
   it again.
 - Use lowercase slugs with hyphens, for example `modelling-workshop-2026`.
+- The CMS makes the slug from the title, keeping only English letters and
+  numbers, so every title needs at least one English word. A Thai-only title
+  would produce an empty slug, and the CMS will not save it.
+- Titles must be unique within a section and year. A repeated title is saved
+  as `index-1.md` inside the first entry's folder, which Hugo never publishes;
+  `scripts/validate-entries.sh` fails the deployment when it finds one.
 - Keep page-specific images, PDFs, and attachments inside the same page folder.
 - Use `static/images/` only for shared site assets such as banners, logos,
   partner logos, and default template images.

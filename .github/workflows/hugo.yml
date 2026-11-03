@@ -4,6 +4,11 @@ on:
   push:
     branches:
       - main
+  # Hugo leaves out posts dated in the future, so rebuild daily at 00:05 Bangkok
+  # time (17:05 UTC) to publish them on their date. GitHub disables scheduled
+  # workflows after 60 days without commits in a public repository.
+  schedule:
+    - cron: "5 17 * * *"
   workflow_dispatch:
 
 permissions:
@@ -70,6 +75,9 @@ jobs:
 
       - name: Validate media policy
         run: bash scripts/validate-media.sh
+
+      - name: Validate content paths
+        run: bash scripts/validate-entries.sh
 
       - name: Build
         run: hugo --minify --cleanDestinationDir

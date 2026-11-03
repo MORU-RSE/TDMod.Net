@@ -71,6 +71,7 @@ Checks the deployment also runs:
 ```sh
 node --test tests/image-optimizer.test.js
 bash scripts/validate-media.sh
+bash scripts/validate-entries.sh
 bash scripts/prune-orphan-bundles.sh
 hugo --minify --cleanDestinationDir
 ```

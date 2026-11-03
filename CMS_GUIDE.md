@@ -82,7 +82,30 @@ later once the workflow finishes.
 
 The Publish button also offers "Publish and create new" and "Publish and
 duplicate". All three save identically; they differ only in what the editor sees
-next, with duplicate pre-filling a copy of the current entry.
+next, with duplicate pre-filling a copy of the current entry. Give the copy a new
+title before saving it; see "Titles and page addresses" below.
+
+### Scheduling
+
+Publish dates are read as Bangkok dates. An entry with Draft off and a future
+date is committed straight away but stays off the site until that day: the
+workflow rebuilds the site daily at 00:05 Bangkok time and the entry appears
+then. GitHub pauses scheduled workflows after 60 days without a commit to the
+repository, so after a long quiet spell re-enable the schedule under the
+repository's Actions tab, or simply save any entry to trigger a build.
+
+### Titles and page addresses
+
+The page address is built from the title, for example
+`news/2026/modelling-workshop/`, using only English letters and numbers.
+
+- **Include at least one English word.** Thai characters are dropped from the
+  address, so a Thai-only title would leave it empty. The CMS refuses to save
+  such a title.
+- **Use a title not already used in the same year and section.** Decap gives
+  the second entry a path inside the first entry's folder, where Hugo never
+  shows it. The deployment fails with a message naming the file if this
+  happens; delete that entry and create it again with a different title.
 
 ### Do not change the year of an existing entry
 
@@ -147,6 +170,7 @@ Always verify the site after CMS configuration changes:
 hugo --minify --cleanDestinationDir
 node --test tests/image-optimizer.test.js
 bash scripts/validate-media.sh
+bash scripts/validate-entries.sh
 bash scripts/prune-orphan-bundles.sh
 ```
 
