@@ -85,14 +85,12 @@ duplicate". All three save identically; they differ only in what the editor sees
 next, with duplicate pre-filling a copy of the current entry. Give the copy a new
 title before saving it; see "Titles and page addresses" below.
 
-### Scheduling
+### Future dates are not scheduled
 
-Publish dates are read as Bangkok dates. An entry with Draft off and a future
-date is committed straight away but stays off the site until that day: the
-workflow rebuilds the site daily at 00:05 Bangkok time and the entry appears
-then. GitHub pauses scheduled workflows after 60 days without a commit to the
-repository, so after a long quiet spell re-enable the schedule under the
-repository's Actions tab, or simply save any entry to trigger a build.
+Publish dates are read as Bangkok dates. The site is rebuilt only when something
+is saved, so an entry with Draft off and a future date stays hidden even after
+that day arrives, until the next save of any entry. To publish on a given day,
+save the entry with Draft off on that day.
 
 ### Titles and page addresses
 
