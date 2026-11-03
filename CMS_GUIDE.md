@@ -83,7 +83,8 @@ later once the workflow finishes.
 The Publish button also offers "Publish and create new" and "Publish and
 duplicate". All three save identically; they differ only in what the editor sees
 next, with duplicate pre-filling a copy of the current entry. Give the copy a new
-title before saving it; see "Titles and page addresses" below.
+title before saving it; see "Titles and page addresses" below. Its images are
+copied over by the deployment; see "Duplicated Entries".
 
 ### Future dates are not scheduled
 
@@ -110,6 +111,15 @@ The page address is built from the title, for example
 An entry's folder is chosen from `date` when it is first saved. Editing the year
 afterwards leaves the original behind and writes a second copy under the new
 year. If the year is wrong, delete the entry and create it again.
+
+## Duplicated Entries
+
+"Publish and duplicate" copies an entry's text and image references, but Decap
+does not copy the image files, so the new entry would show broken images. The
+deployment workflow runs `scripts/copy-duplicated-images.sh` first, which finds
+each missing image in the original entry's folder, copies it into the new one,
+and commits the copy. If an image cannot be found anywhere the deployment fails
+and names the entry; upload the image again in the CMS.
 
 ## Deleting Entries
 
@@ -169,6 +179,7 @@ hugo --minify --cleanDestinationDir
 node --test tests/image-optimizer.test.js
 bash scripts/validate-media.sh
 bash scripts/validate-entries.sh
+bash scripts/copy-duplicated-images.sh
 bash scripts/prune-orphan-bundles.sh
 ```
 

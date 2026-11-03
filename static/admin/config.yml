@@ -55,8 +55,8 @@ collections:
         pattern: \d{4}-\d{2}
     fields:
       - { label: Entry Type, name: entry_type, widget: hidden, default: post }
-      - { label: Title, name: title, widget: string, pattern: ['[A-Za-z]', 'at least one English letter, because the page address is built from the title'], hint: "Thai is fine, but include at least one English word. The page address (URL) is made from the English letters and numbers in the title, and must be unique within a year." }
-      - { label: Publish Date, name: date, widget: datetime, date_format: YYYY-MM-DD, time_format: false, format: YYYY-MM-DD, hint: "⚠️ **Do not change the year after saving.** It decides which folder this entry lives in, and editing it later leaves a duplicate copy behind. If the year is wrong, delete this entry and create a new one." }
+      - { label: Title, name: title, widget: string, pattern: ['[A-Za-z]', 'at least one English letter, because the page address is built from the title'], hint: "Include at least one English word (the page address is made from it), and don't reuse a title from the same year." }
+      - { label: Publish Date, name: date, widget: datetime, date_format: YYYY-MM-DD, time_format: false, format: YYYY-MM-DD, default: "{{now}}", hint: "⚠️ **Do not change the year after saving.** It decides which folder this entry lives in, and editing it later leaves a duplicate copy behind. If the year is wrong, delete this entry and create a new one." }
       - { label: Draft, name: draft, widget: boolean, default: true, hint: Leave this on while you are writing. Turn it off to publish to the live site. }
       - { label: Author, name: author, widget: string, required: false }
       - { label: Summary, name: summary, widget: text, required: true, hint: Short text shown on listing pages. }
@@ -65,7 +65,7 @@ collections:
         name: cover
         widget: object
         required: false
-        collapsed: true
+        collapsed: false
         fields:
           - label: Image
             name: image
@@ -108,8 +108,8 @@ collections:
         pattern: \d{4}-\d{2}
     fields:
       - { label: Entry Type, name: entry_type, widget: hidden, default: post }
-      - { label: Title, name: title, widget: string, pattern: ['[A-Za-z]', 'at least one English letter, because the page address is built from the title'], hint: "Thai is fine, but include at least one English word. The page address (URL) is made from the English letters and numbers in the title, and must be unique within a year." }
-      - { label: Publish Date, name: date, widget: datetime, date_format: YYYY-MM-DD, time_format: false, format: YYYY-MM-DD, hint: "⚠️ **Do not change the year after saving.** It decides which folder this entry lives in, and editing it later leaves a duplicate copy behind. If the year is wrong, delete this entry and create a new one." }
+      - { label: Title, name: title, widget: string, pattern: ['[A-Za-z]', 'at least one English letter, because the page address is built from the title'], hint: "Include at least one English word (the page address is made from it), and don't reuse a title from the same year." }
+      - { label: Publish Date, name: date, widget: datetime, date_format: YYYY-MM-DD, time_format: false, format: YYYY-MM-DD, default: "{{now}}", hint: "⚠️ **Do not change the year after saving.** It decides which folder this entry lives in, and editing it later leaves a duplicate copy behind. If the year is wrong, delete this entry and create a new one." }
       - { label: Draft, name: draft, widget: boolean, default: true, hint: Leave this on while you are writing. Turn it off to publish to the live site. }
       - { label: Authors, name: author, widget: list, required: false, field: { label: Author, name: author, widget: string } }
       - { label: Summary, name: summary, widget: text, required: true }
@@ -118,7 +118,7 @@ collections:
         name: cover
         widget: object
         required: false
-        collapsed: true
+        collapsed: false
         fields:
           - label: Image
             name: image
@@ -161,8 +161,8 @@ collections:
         pattern: \d{4}-\d{2}
     fields:
       - { label: Entry Type, name: entry_type, widget: hidden, default: post }
-      - { label: Title, name: title, widget: string, pattern: ['[A-Za-z]', 'at least one English letter, because the page address is built from the title'], hint: "Thai is fine, but include at least one English word. The page address (URL) is made from the English letters and numbers in the title, and must be unique within a year." }
-      - { label: Publish Date, name: date, widget: datetime, date_format: YYYY-MM-DD, time_format: false, format: YYYY-MM-DD, hint: "⚠️ **Do not change the year after saving.** It decides which folder this entry lives in, and editing it later leaves a duplicate copy behind. If the year is wrong, delete this entry and create a new one." }
+      - { label: Title, name: title, widget: string, pattern: ['[A-Za-z]', 'at least one English letter, because the page address is built from the title'], hint: "Include at least one English word (the page address is made from it), and don't reuse a title from the same year." }
+      - { label: Publish Date, name: date, widget: datetime, date_format: YYYY-MM-DD, time_format: false, format: YYYY-MM-DD, default: "{{now}}", hint: "⚠️ **Do not change the year after saving.** It decides which folder this entry lives in, and editing it later leaves a duplicate copy behind. If the year is wrong, delete this entry and create a new one." }
       - { label: Draft, name: draft, widget: boolean, default: true, hint: Leave this on while you are writing. Turn it off to publish to the live site. }
       - { label: Author, name: author, widget: string, required: false }
       - { label: Summary, name: summary, widget: text, required: true }
@@ -171,7 +171,7 @@ collections:
         name: cover
         widget: object
         required: false
-        collapsed: true
+        collapsed: false
         fields:
           - label: Image
             name: image

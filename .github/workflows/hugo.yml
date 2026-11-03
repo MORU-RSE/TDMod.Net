@@ -7,8 +7,9 @@ on:
   workflow_dispatch:
 
 permissions:
-  # contents: write is needed by the prune step below, which commits the removal of
-  # entry folders that Decap leaves behind when an editor deletes a post.
+  # contents: write is needed by the content repair steps below, which commit
+  # images copied into duplicated entries and the removal of entry folders that
+  # Decap leaves behind when an editor deletes a post.
   contents: write
   pages: write
   id-token: write
@@ -43,23 +44,29 @@ jobs:
           hugo-version: ${{ env.HUGO_VERSION }}
           extended: true
 
+      # Duplicating a post in the CMS copies its front matter but not its images,
+      # so the copy points at files left in the original's folder. Copy them in
+      # before pruning, so an original deleted in the same push still has them.
+      - name: Copy images for duplicated entries
+        run: bash scripts/copy-duplicated-images.sh
+
       # Deleting a post in the CMS removes only its index.md, so the folder and its
       # uploaded images stay behind and Hugo keeps publishing them. Prune before the
-      # build so the orphans never reach the site, then commit the removal.
+      # build so the orphans never reach the site.
       - name: Prune orphaned entry folders
         run: bash scripts/prune-orphan-bundles.sh
 
-      - name: Commit pruned folders
+      - name: Commit content repairs
         if: github.ref == 'refs/heads/main'
         run: |
           if [[ -z "$(git status --porcelain content)" ]]; then
-            echo "Nothing pruned; no commit needed."
+            echo "Nothing repaired; no commit needed."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A content
-          git commit -m "Remove entry folders orphaned by a CMS delete"
+          git commit -m "Repair content after CMS edits"
           # Pushes authored by GITHUB_TOKEN do not trigger workflow runs, so this
           # cannot loop. Rebase first in case an editor saved while we were building.
           git pull --rebase origin main
